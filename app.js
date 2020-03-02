@@ -105,4 +105,8 @@ let myCollection = [12, 'dog', true, null];
 
 shoppingList[0] = 'whole milk';
 shoppingList[shoppingList.length] = 'ice cream';
+
+shoppingList.push('meat'); // add to the end
+shoppingList.pop(); // delete from the end
+
 console.log(shoppingList);
