@@ -100,7 +100,7 @@
 // console.log((x == 7 || x === 3) && x > 10);
 
 let shoppingList = ['2% milk', 'water', 'ice'];
-let lotto = [25,22,62,7]
+let lotto = [25,22,62,7, 8]
 let myCollection = [12, 'dog', true, null];
 
 shoppingList[0] = 'whole milk';
