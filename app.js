@@ -99,17 +99,28 @@
 // console.log(x == 7 || x === 3 && x > 10);
 // console.log((x == 7 || x === 3) && x > 10);
 
-let shoppingList = ['2% milk', 'water', 'ice'];
-let lotto = [25,22,62,7, 8]
-let myCollection = [12, 'dog', true, null];
+// let shoppingList = ['2% milk', 'water', 'ice'];
+// let lotto = [25,22,62,7, 8]
+// let myCollection = [12, 'dog', true, null];
 
-shoppingList[0] = 'whole milk';
-shoppingList[shoppingList.length] = 'ice cream';
+// shoppingList[0] = 'whole milk';
+// shoppingList[shoppingList.length] = 'ice cream';
 
-shoppingList.push('meat'); // add to the end
-shoppingList.pop(); // delete from the end
+// shoppingList.push('meat'); // add to the end
+// shoppingList.pop(); // delete from the end
 
-shoppingList.unshift('beer', 'tomatoes'); // add to start
-shoppingList.shift(); // remove from the stard
+// shoppingList.unshift('beer', 'tomatoes'); // add to start
+// shoppingList.shift(); // remove from the stard
 
-console.log(shoppingList);
+// console.log(shoppingList);
+
+let fruits = ['apple', 'banana'];
+let veggies = ['potatoes', 'asparagus'];
+let meat = ['pork', 'chicken'];
+
+let vegMix1 = fruits.concat(veggies);
+let vegMix2 = veggies.concat(fruits);
+let allFood = fruits.concat(veggies, meat)
+console.log(vegMix1);
+console.log(vegMix2);
+console.log(allFood);
