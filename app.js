@@ -109,4 +109,7 @@ shoppingList[shoppingList.length] = 'ice cream';
 shoppingList.push('meat'); // add to the end
 shoppingList.pop(); // delete from the end
 
+shoppingList.unshift('beer', 'tomatoes'); // add to start
+shoppingList.shift(); // remove from the stard
+
 console.log(shoppingList);
