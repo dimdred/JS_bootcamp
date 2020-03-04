@@ -114,13 +114,29 @@
 
 // console.log(shoppingList);
 
-let fruits = ['apple', 'banana'];
-let veggies = ['potatoes', 'asparagus'];
-let meat = ['pork', 'chicken'];
+// let fruits = ['apple', 'banana'];
+// let veggies = ['potatoes', 'asparagus'];
+// let meat = ['pork', 'chicken'];
 
-let vegMix1 = fruits.concat(veggies);
-let vegMix2 = veggies.concat(fruits);
-let allFood = fruits.concat(veggies, meat)
-console.log(vegMix1);
-console.log(vegMix2);
-console.log(allFood);
+// let vegMix1 = fruits.concat(veggies);
+// let vegMix2 = veggies.concat(fruits);
+// let allFood = fruits.concat(veggies, meat)
+// console.log(vegMix1);
+// console.log(vegMix2);
+// console.log(allFood);
+
+let ingredients = [
+    'water',
+    'flour',
+    'cheese',
+    'sugar',
+    'eggs',
+    'butter'
+];
+
+console.log(ingredients.includes('eggs'));
+console.log(ingredients.includes('water', 3)); //would work with 0
+
+console.log(ingredients.indexOf('sugar'));
+console.log(ingredients.indexOf('milk'));
+console.log(ingredients.indexOf('cheese', 5));
