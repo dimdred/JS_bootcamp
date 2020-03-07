@@ -134,9 +134,16 @@ let ingredients = [
     'butter'
 ];
 
-console.log(ingredients.includes('eggs'));
-console.log(ingredients.includes('water', 3)); //would work with 0
+// console.log(ingredients.includes('eggs'));
+// console.log(ingredients.includes('water', 3)); //would work with 0
 
-console.log(ingredients.indexOf('sugar'));
-console.log(ingredients.indexOf('milk'));
-console.log(ingredients.indexOf('cheese', 5));
+// console.log(ingredients.indexOf('sugar'));
+// console.log(ingredients.indexOf('milk'));
+// console.log(ingredients.indexOf('cheese', 5));
+
+console.log(ingredients);
+console.log(ingredients.reverse());
+
+let hello = ['h', 'e', 'l', 'l', 'o'];
+console.log(hello.join());
+console.log(hello.join(''));
