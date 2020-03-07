@@ -141,9 +141,28 @@ let ingredients = [
 // console.log(ingredients.indexOf('milk'));
 // console.log(ingredients.indexOf('cheese', 5));
 
-console.log(ingredients);
-console.log(ingredients.reverse());
+// console.log(ingredients);
+// console.log(ingredients.reverse());
 
-let hello = ['h', 'e', 'l', 'l', 'o'];
-console.log(hello.join());
-console.log(hello.join(''));
+// let hello = ['h', 'e', 'l', 'l', 'o'];
+// console.log(hello.join());
+// console.log(hello.join(''));
+
+let newIngredients = ingredients.slice(3);
+console.log(newIngredients);
+
+let cheeseCake = ingredients.slice(1,5);
+console.log(cheeseCake);
+
+let panCake = ingredients.slice(-3);
+console.log(panCake);
+
+let copy = ingredients.slice();
+console.log(copy);
+
+copy.splice(1,0, 'Milk'); // add 'Milk' to array (return empty Array)
+console.log(copy);
+copy.splice(1,2); // delete 2 elements (return Array with deleted elements)
+console.log(copy);
+copy.splice(3, 1, 'salt', 'paper'); // replace eggs to salt and papper 
+console.log(copy);
