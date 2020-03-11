@@ -167,9 +167,47 @@
 // copy.splice(3, 1, 'salt', 'paper'); // replace eggs to salt and papper 
 // console.log(copy);
 
-let people = ['Anna', 'Nancy', 'Susan', 'Nick', 'Mick', 'Alex'];
-console.log(people.sort());
-console.log(people);
-let nums = [10, 33, 100, 7, 61, 24, 86];
-console.log(nums.sort());
-console.log(nums);
+// let people = ['Anna', 'Nancy', 'Susan', 'Nick', 'Mick', 'Alex'];
+// console.log(people.sort());
+// console.log(people);
+// let nums = [10, 33, 100, 7, 61, 24, 86];
+// console.log(nums.sort());
+// console.log(nums);
+
+// let fruit = 'orange';
+// let collor = fruit;
+// console.log(fruit);
+// console.log(collor);
+// fruit = 'lemon';
+// console.log(fruit);
+// console.log(collor);
+
+// let nums = [5,6,7,8]
+// let otherNums = nums
+// console.log(nums);
+// console.log(otherNums);
+// nums.push(9);
+// console.log(nums);
+// console.log(otherNums);
+// otherNums.pop();
+// otherNums.pop();
+// console.log(nums);
+// console.log(otherNums);
+
+const myEggs = ['brown','brown'];
+myEggs.push('purple');
+console.log(myEggs);
+myEggs[0] = 'green'; // the same reference on object, change the content
+console.log(myEggs);
+
+// myEggs = ['blue', 'pink']; // reasigne the reference
+
+const foods = ['milk'];
+foods.unshift('bread');
+foods.push('butter');
+console.log(foods);
+foods.pop();
+foods.pop();
+foods.pop();
+console.log(foods);
+// foods = [] // wouldnt work, new array
