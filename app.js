@@ -125,14 +125,14 @@
 // console.log(vegMix2);
 // console.log(allFood);
 
-let ingredients = [
-    'water',
-    'flour',
-    'cheese',
-    'sugar',
-    'eggs',
-    'butter'
-];
+// let ingredients = [
+//     'water',
+//     'flour',
+//     'cheese',
+//     'sugar',
+//     'eggs',
+//     'butter'
+// ];
 
 // console.log(ingredients.includes('eggs'));
 // console.log(ingredients.includes('water', 3)); //would work with 0
@@ -148,21 +148,28 @@ let ingredients = [
 // console.log(hello.join());
 // console.log(hello.join(''));
 
-let newIngredients = ingredients.slice(3);
-console.log(newIngredients);
+// let newIngredients = ingredients.slice(3);
+// console.log(newIngredients);
 
-let cheeseCake = ingredients.slice(1,5);
-console.log(cheeseCake);
+// let cheeseCake = ingredients.slice(1,5);
+// console.log(cheeseCake);
 
-let panCake = ingredients.slice(-3);
-console.log(panCake);
+// let panCake = ingredients.slice(-3);
+// console.log(panCake);
 
-let copy = ingredients.slice();
-console.log(copy);
+// let copy = ingredients.slice();
+// console.log(copy);
 
-copy.splice(1,0, 'Milk'); // add 'Milk' to array (return empty Array)
-console.log(copy);
-copy.splice(1,2); // delete 2 elements (return Array with deleted elements)
-console.log(copy);
-copy.splice(3, 1, 'salt', 'paper'); // replace eggs to salt and papper 
-console.log(copy);
+// copy.splice(1,0, 'Milk'); // add 'Milk' to array (return empty Array)
+// console.log(copy);
+// copy.splice(1,2); // delete 2 elements (return Array with deleted elements)
+// console.log(copy);
+// copy.splice(3, 1, 'salt', 'paper'); // replace eggs to salt and papper 
+// console.log(copy);
+
+let people = ['Anna', 'Nancy', 'Susan', 'Nick', 'Mick', 'Alex'];
+console.log(people.sort());
+console.log(people);
+let nums = [10, 33, 100, 7, 61, 24, 86];
+console.log(nums.sort());
+console.log(nums);
