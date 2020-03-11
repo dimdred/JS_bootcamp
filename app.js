@@ -212,21 +212,58 @@
 // console.log(foods);
 // // foods = [] // wouldnt work, new array
 
-const animalsPairs = [
-    ['doe', ['buck', 'stag']],
-    ['ewe', 'ram'],
-    ['dog', 'cat']
-];
+// const animalsPairs = [
+//     ['doe', ['buck', 'stag']],
+//     ['ewe', 'ram'],
+//     ['dog', 'cat']
+// ];
 
-console.log(animalsPairs);
-console.log(animalsPairs[2][0]);
-console.log(animalsPairs[1][1]);
+// console.log(animalsPairs);
+// console.log(animalsPairs[2][0]);
+// console.log(animalsPairs[1][1]);
 
-const board = [
-    ['O', null, 'X'],
-    [null, 'X', 'O'],
-    ['X', 'O', null]
-]
-console.log(board);
+// const board = [
+//     ['O', null, 'X'],
+//     [null, 'X', 'O'],
+//     ['X', 'O', null]
+// ]
+// console.log(board);
 
-console.log(animalsPairs[0][1][1]);
+// console.log(animalsPairs[0][1][1]);
+
+const fitBitData = {
+    totatlSteps: 36891,
+    totalMiles: 217.81,
+    avgCaloriesBurn: 881,
+    workOutThisWeek: '5 of 7',
+    avgGoodSleep: '2:51',
+    45: 'forty five',
+    '16': 'sixteen'
+};
+
+console.log(fitBitData);
+console.log(fitBitData.totalMiles);
+// console.log(fitBitData.45); // wouldn't work, 45 was converted to string
+console.log(fitBitData['45']);
+console.log(fitBitData[45]);
+console.log(fitBitData[16]);
+
+const palette = {
+    red: '#eb14d1',
+    yellow: '#fd9ca',
+    blue: '#303d1e'
+}
+
+let randColor = 'blue';
+console.log(palette[randColor]); // return value for blue, [] - for dinamic values
+// console.log(palette.randColor); // undefined
+
+const userReviews = {};
+userReviews['queenBee49'] = 4.5;
+userReviews.mrSmth21 = 4;
+userReviews['DD'] = '5';
+console.log(userReviews);
+userReviews['DD'] = 5; // update value;
+userReviews.queenBee49 += 2;
+userReviews.mrSmth21 --;
+console.log(userReviews);
