@@ -268,36 +268,67 @@
 // userReviews.mrSmth21 --;
 // console.log(userReviews);
 
-const student = {
-    firstName: 'Nick',
-    lastName: 'jones',
-    skills: ['Music', 'Arts'],
-    exams: {
-        'midterm': 92,
-        'final': 88
-    }
+// const student = {
+//     firstName: 'Nick',
+//     lastName: 'jones',
+//     skills: ['Music', 'Arts'],
+//     exams: {
+//         'midterm': 92,
+//         'final': 88
+//     }
+// };
+
+// student['avgScore'] = ( student['exams']['midterm'] + student['exams']['final']) / 2;
+// console.log(student);
+// console.log(student.skills[1]);
+
+// const shoppingCart = [
+//     {
+//         'product': 'milk',
+//         'price': 1.5,
+//         'quantity': 3
+//     },
+//     {
+//         'product': 'water',
+//         'price': 0.2,
+//         'quantity': 10 
+//     },
+//     {
+//         'product': 'juice',
+//         'price': 3,
+//         'quantity': 2 
+//     }
+// ];
+
+// console.log(shoppingCart[0].product);
+
+const palette = {
+    red: '#eb14d1',
+    yellow: '#fd9ca',
+    blue: '#303d1e'
+}
+
+const palette2 = palette
+palette2.green = '#1re3da'
+
+console.log(palette2); 
+console.log(palette); // both are changed, because use the same reference
+
+let nums = [1, 2, 3];
+let myNums = [1, 2 ,3];
+console.log(nums === myNums, nums == myNums);
+let newNums = nums;
+console.log(nums === newNums);
+
+const user = {
+    name: 'Alex',
+    age: 23,
+    notification: []
+};
+console.log(user.notification == []);
+
+if(!user.notification.length) {
+    console.log('No notifications!');
 };
 
-student['avgScore'] = ( student['exams']['midterm'] + student['exams']['final']) / 2;
-console.log(student);
-console.log(student.skills[1]);
-
-const shoppingCart = [
-    {
-        'product': 'milk',
-        'price': 1.5,
-        'quantity': 3
-    },
-    {
-        'product': 'water',
-        'price': 0.2,
-        'quantity': 10 
-    },
-    {
-        'product': 'juice',
-        'price': 3,
-        'quantity': 2 
-    }
-];
-
-console.log(shoppingCart[0].product);
+console.log({a:1} == {a:1});
