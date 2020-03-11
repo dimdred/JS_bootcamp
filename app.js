@@ -231,39 +231,73 @@
 
 // console.log(animalsPairs[0][1][1]);
 
-const fitBitData = {
-    totatlSteps: 36891,
-    totalMiles: 217.81,
-    avgCaloriesBurn: 881,
-    workOutThisWeek: '5 of 7',
-    avgGoodSleep: '2:51',
-    45: 'forty five',
-    '16': 'sixteen'
+// const fitBitData = {
+//     totatlSteps: 36891,
+//     totalMiles: 217.81,
+//     avgCaloriesBurn: 881,
+//     workOutThisWeek: '5 of 7',
+//     avgGoodSleep: '2:51',
+//     45: 'forty five',
+//     '16': 'sixteen'
+// };
+
+// console.log(fitBitData);
+// console.log(fitBitData.totalMiles);
+// // console.log(fitBitData.45); // wouldn't work, 45 was converted to string
+// console.log(fitBitData['45']);
+// console.log(fitBitData[45]);
+// console.log(fitBitData[16]);
+
+// const palette = {
+//     red: '#eb14d1',
+//     yellow: '#fd9ca',
+//     blue: '#303d1e'
+// }
+
+// let randColor = 'blue';
+// console.log(palette[randColor]); // return value for blue, [] - for dinamic values
+// // console.log(palette.randColor); // undefined
+
+// const userReviews = {};
+// userReviews['queenBee49'] = 4.5;
+// userReviews.mrSmth21 = 4;
+// userReviews['DD'] = '5';
+// console.log(userReviews);
+// userReviews['DD'] = 5; // update value;
+// userReviews.queenBee49 += 2;
+// userReviews.mrSmth21 --;
+// console.log(userReviews);
+
+const student = {
+    firstName: 'Nick',
+    lastName: 'jones',
+    skills: ['Music', 'Arts'],
+    exams: {
+        'midterm': 92,
+        'final': 88
+    }
 };
 
-console.log(fitBitData);
-console.log(fitBitData.totalMiles);
-// console.log(fitBitData.45); // wouldn't work, 45 was converted to string
-console.log(fitBitData['45']);
-console.log(fitBitData[45]);
-console.log(fitBitData[16]);
+student['avgScore'] = ( student['exams']['midterm'] + student['exams']['final']) / 2;
+console.log(student);
+console.log(student.skills[1]);
 
-const palette = {
-    red: '#eb14d1',
-    yellow: '#fd9ca',
-    blue: '#303d1e'
-}
+const shoppingCart = [
+    {
+        'product': 'milk',
+        'price': 1.5,
+        'quantity': 3
+    },
+    {
+        'product': 'water',
+        'price': 0.2,
+        'quantity': 10 
+    },
+    {
+        'product': 'juice',
+        'price': 3,
+        'quantity': 2 
+    }
+];
 
-let randColor = 'blue';
-console.log(palette[randColor]); // return value for blue, [] - for dinamic values
-// console.log(palette.randColor); // undefined
-
-const userReviews = {};
-userReviews['queenBee49'] = 4.5;
-userReviews.mrSmth21 = 4;
-userReviews['DD'] = '5';
-console.log(userReviews);
-userReviews['DD'] = 5; // update value;
-userReviews.queenBee49 += 2;
-userReviews.mrSmth21 --;
-console.log(userReviews);
+console.log(shoppingCart[0].product);
