@@ -194,20 +194,39 @@
 // console.log(nums);
 // console.log(otherNums);
 
-const myEggs = ['brown','brown'];
-myEggs.push('purple');
-console.log(myEggs);
-myEggs[0] = 'green'; // the same reference on object, change the content
-console.log(myEggs);
+// const myEggs = ['brown','brown'];
+// myEggs.push('purple');
+// console.log(myEggs);
+// myEggs[0] = 'green'; // the same reference on object, change the content
+// console.log(myEggs);
 
-// myEggs = ['blue', 'pink']; // reasigne the reference
+// // myEggs = ['blue', 'pink']; // reasigne the reference
 
-const foods = ['milk'];
-foods.unshift('bread');
-foods.push('butter');
-console.log(foods);
-foods.pop();
-foods.pop();
-foods.pop();
-console.log(foods);
-// foods = [] // wouldnt work, new array
+// const foods = ['milk'];
+// foods.unshift('bread');
+// foods.push('butter');
+// console.log(foods);
+// foods.pop();
+// foods.pop();
+// foods.pop();
+// console.log(foods);
+// // foods = [] // wouldnt work, new array
+
+const animalsPairs = [
+    ['doe', ['buck', 'stag']],
+    ['ewe', 'ram'],
+    ['dog', 'cat']
+];
+
+console.log(animalsPairs);
+console.log(animalsPairs[2][0]);
+console.log(animalsPairs[1][1]);
+
+const board = [
+    ['O', null, 'X'],
+    [null, 'X', 'O'],
+    ['X', 'O', null]
+]
+console.log(board);
+
+console.log(animalsPairs[0][1][1]);
