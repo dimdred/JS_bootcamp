@@ -302,33 +302,84 @@
 
 // console.log(shoppingCart[0].product);
 
-const palette = {
-    red: '#eb14d1',
-    yellow: '#fd9ca',
-    blue: '#303d1e'
+// const palette = {
+//     red: '#eb14d1',
+//     yellow: '#fd9ca',
+//     blue: '#303d1e'
+// }
+
+// const palette2 = palette
+// palette2.green = '#1re3da'
+
+// console.log(palette2); 
+// console.log(palette); // both are changed, because use the same reference
+
+// let nums = [1, 2, 3];
+// let myNums = [1, 2 ,3];
+// console.log(nums === myNums, nums == myNums);
+// let newNums = nums;
+// console.log(nums === newNums);
+
+// const user = {
+//     name: 'Alex',
+//     age: 23,
+//     notification: []
+// };
+// console.log(user.notification == []);
+
+// if(!user.notification.length) {
+//     console.log('No notifications!');
+// };
+
+// console.log({a:1} == {a:1});
+
+for (let i = 1; i <= 10; i++) {
+    console.log(`${i} x ${i} = ${i*i}`);
 }
 
-const palette2 = palette
-palette2.green = '#1re3da'
+for (let i = 200; i >= 0; i -= 25) {
+    console.log(i);
+}
+console.log('DONE!')
 
-console.log(palette2); 
-console.log(palette); // both are changed, because use the same reference
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+for (let i = 0; i < nums.length; i++) {
+    let element = nums[i];
+    console.log(element);
+}
 
-let nums = [1, 2, 3];
-let myNums = [1, 2 ,3];
-console.log(nums === myNums, nums == myNums);
-let newNums = nums;
-console.log(nums === newNums);
+const students = [
+    {
+        name: 'Alex',
+        grade: 89
+    },
+    {
+        name: 'John',
+        grade: 97
+    },
+    {
+        name: 'Nick',
+        grade: 75
+    },
+    {
+        name: 'Mick',
+        grade: 83
+    }
+];
 
-const user = {
-    name: 'Alex',
-    age: 23,
-    notification: []
-};
-console.log(user.notification == []);
+let sumGrade = 0;
+for (let i = 0; i < students.length; i++) {
+    let student = students[i];
+    console.log(`${student.name} scored ${student.grade}`);
+    sumGrade += student.grade
+}
+let avgGrade = sumGrade / students.length
+console.log(avgGrade);
 
-if(!user.notification.length) {
-    console.log('No notifications!');
-};
-
-console.log({a:1} == {a:1});
+const word = 'stressed';
+let reverseWord = ''
+for (let i = word.length-1; i >= 0; i--) {
+    console.log(word[i]);
+    reverseWord += word[i];
+}
+console.log(reverseWord);
