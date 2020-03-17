@@ -333,53 +333,82 @@
 
 // console.log({a:1} == {a:1});
 
+// for (let i = 1; i <= 10; i++) {
+//     console.log(`${i} x ${i} = ${i*i}`);
+// }
+
+// for (let i = 200; i >= 0; i -= 25) {
+//     console.log(i);
+// }
+// console.log('DONE!')
+
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+// for (let i = 0; i < nums.length; i++) {
+//     let element = nums[i];
+//     console.log(element);
+// }
+
+// const students = [
+//     {
+//         name: 'Alex',
+//         grade: 89
+//     },
+//     {
+//         name: 'John',
+//         grade: 97
+//     },
+//     {
+//         name: 'Nick',
+//         grade: 75
+//     },
+//     {
+//         name: 'Mick',
+//         grade: 83
+//     }
+// ];
+
+// let sumGrade = 0;
+// for (let i = 0; i < students.length; i++) {
+//     let student = students[i];
+//     console.log(`${student.name} scored ${student.grade}`);
+//     sumGrade += student.grade
+// }
+// let avgGrade = sumGrade / students.length
+// console.log(avgGrade);
+
+// const word = 'stressed';
+// let reverseWord = ''
+// for (let i = word.length-1; i >= 0; i--) {
+//     console.log(word[i]);
+//     reverseWord += word[i];
+// }
+// console.log(reverseWord);
+
 for (let i = 1; i <= 10; i++) {
-    console.log(`${i} x ${i} = ${i*i}`);
-}
+    console.log('OUTER LOOP', i);
+    for (let j = 10; j >= 0; j -= 3) {
+        console.log('   INNER LOOP', j);
+    };
+};
 
-for (let i = 200; i >= 0; i -= 25) {
-    console.log(i);
-}
-console.log('DONE!')
+const gameBoard = [
+    [4, 32, 8, 4],
+    [64, 8, 32, 2],
+    [8, 32, 16, 4],
+    [2, 8, 4, 2]
+]
 
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-for (let i = 0; i < nums.length; i++) {
-    let element = nums[i];
-    console.log(element);
-}
-
-const students = [
-    {
-        name: 'Alex',
-        grade: 89
-    },
-    {
-        name: 'John',
-        grade: 97
-    },
-    {
-        name: 'Nick',
-        grade: 75
-    },
-    {
-        name: 'Mick',
-        grade: 83
+let totalSum = 0;
+let diagSum = 0;
+for (let i = 0; i < gameBoard.length; i++) {
+    let rowGame = gameBoard[i];
+    let rowSum = 0;
+    for (let j = 0; j < rowGame.length; j++) {
+        rowSum += rowGame[j];
+        diagSum += rowGame[i] / rowGame.length;
     }
-];
-
-let sumGrade = 0;
-for (let i = 0; i < students.length; i++) {
-    let student = students[i];
-    console.log(`${student.name} scored ${student.grade}`);
-    sumGrade += student.grade
-}
-let avgGrade = sumGrade / students.length
-console.log(avgGrade);
-
-const word = 'stressed';
-let reverseWord = ''
-for (let i = word.length-1; i >= 0; i--) {
-    console.log(word[i]);
-    reverseWord += word[i];
-}
-console.log(reverseWord);
+    console.log(rowSum);
+    totalSum += rowSum;
+};
+console.log(totalSum);
+console.log(diagSum);
