@@ -384,31 +384,45 @@
 // }
 // console.log(reverseWord);
 
-for (let i = 1; i <= 10; i++) {
-    console.log('OUTER LOOP', i);
-    for (let j = 10; j >= 0; j -= 3) {
-        console.log('   INNER LOOP', j);
-    };
+// for (let i = 1; i <= 10; i++) {
+//     console.log('OUTER LOOP', i);
+//     for (let j = 10; j >= 0; j -= 3) {
+//         console.log('   INNER LOOP', j);
+//     };
+// };
+
+// const gameBoard = [
+//     [4, 32, 8, 4],
+//     [64, 8, 32, 2],
+//     [8, 32, 16, 4],
+//     [2, 8, 4, 2]
+// ]
+
+// let totalSum = 0;
+// let diagSum = 0;
+// for (let i = 0; i < gameBoard.length; i++) {
+//     let rowGame = gameBoard[i];
+//     let rowSum = 0;
+//     for (let j = 0; j < rowGame.length; j++) {
+//         rowSum += rowGame[j];
+//         diagSum += rowGame[i] / rowGame.length;
+//     }
+//     console.log(rowSum);
+//     totalSum += rowSum;
+// };
+// console.log(totalSum);
+// console.log(diagSum);
+
+let j = 0;
+while (j <= 5) {
+    console.log(j);
+    j++;
 };
 
-const gameBoard = [
-    [4, 32, 8, 4],
-    [64, 8, 32, 2],
-    [8, 32, 16, 4],
-    [2, 8, 4, 2]
-]
-
-let totalSum = 0;
-let diagSum = 0;
-for (let i = 0; i < gameBoard.length; i++) {
-    let rowGame = gameBoard[i];
-    let rowSum = 0;
-    for (let j = 0; j < rowGame.length; j++) {
-        rowSum += rowGame[j];
-        diagSum += rowGame[i] / rowGame.length;
-    }
-    console.log(rowSum);
-    totalSum += rowSum;
-};
-console.log(totalSum);
-console.log(diagSum);
+const target = Math.floor(Math.random() * 10);
+let guess;
+while (target !== guess) {
+    guess = Math.floor(Math.random() * 10);
+    console.log(`${target} is not equal to ${guess}`);
+}
+console.log(`${target} is equal to ${guess}`);
