@@ -413,16 +413,29 @@
 // console.log(totalSum);
 // console.log(diagSum);
 
-let j = 0;
-while (j <= 5) {
-    console.log(j);
-    j++;
-};
+// let j = 0;
+// while (j <= 5) {
+//     console.log(j);
+//     j++;
+// };
+
+// const target = Math.floor(Math.random() * 10);
+// let guess;
+// while (target !== guess) {
+//     guess = Math.floor(Math.random() * 10);
+//     console.log(`${target} is not equal to ${guess}`);
+// }
+// console.log(`${target} is equal to ${guess}`);
+
+for (let i = 0; i <= 10; i++) {
+    console.log(i);
+    if(i === 5) break;
+}
 
 const target = Math.floor(Math.random() * 10);
 let guess;
-while (target !== guess) {
+while (true) {
     guess = Math.floor(Math.random() * 10);
-    console.log(`${target} is not equal to ${guess}`);
+    if (target === guess) break;
 }
 console.log(`${target} is equal to ${guess}`);
