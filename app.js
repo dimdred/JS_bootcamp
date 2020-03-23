@@ -427,15 +427,99 @@
 // }
 // console.log(`${target} is equal to ${guess}`);
 
-for (let i = 0; i <= 10; i++) {
-    console.log(i);
-    if(i === 5) break;
+// for (let i = 0; i <= 10; i++) {
+//     console.log(i);
+//     if(i === 5) break;
+// }
+
+// const target = Math.floor(Math.random() * 10);
+// let guess;
+// while (true) {
+//     guess = Math.floor(Math.random() * 10);
+//     if (target === guess) break;
+// }
+// console.log(`${target} is equal to ${guess}`);
+
+let subreddits = ['soccer', 'book', 'guitar', 'PS'];
+for (let i = 0; i < subreddits.length; i++) {
+    console.log(subreddits[i]);
 }
 
-const target = Math.floor(Math.random() * 10);
-let guess;
-while (true) {
-    guess = Math.floor(Math.random() * 10);
-    if (target === guess) break;
+for (let sub of subreddits) {
+    console.log(sub);
 }
-console.log(`${target} is equal to ${guess}`);
+
+for (let char of 'string') {
+    console.log(char.toUpperCase());
+}
+
+const magicSquare = [
+    [2, 7, 6],
+    [9, 5, 1],
+    [4, 3, 8]
+];
+
+for (let i = 0; i < magicSquare.length; i++) {
+    let sum = 0;
+    let row = magicSquare[i];
+    for (let j = 0; j < row.length; j++) {
+        sum += row[j];
+    }
+    console.log(`Sum of ${i+1} row: ${sum}`)
+}
+
+for (let row of magicSquare) {
+    let sum = 0;
+    for (let item of row) {
+        sum += item;
+    }
+    console.log(`Sum of ${row} = ${sum}`)
+};
+
+const words1 = ['mail', 'milk', 'bull', 'black'];
+const words2 = ['box', 'shake', 'dog', 'berry'];
+
+let j = 0;
+for (let i = 0; i < words1.length; i++) {
+    for (j; j < words2.length; j++) {
+        console.log(words1[i] + words2[j]);
+        break;
+    }
+    j++;
+}
+
+for (let i = 0; i < words1.length; i++) {
+    console.log(`${words1[i]}${words2[i]}`);
+}
+
+const movieReviews = {
+    Arrival: 8.5,
+    Alien: 9.0,
+    Amadeus: 10,
+    'In Bruges': 9.0,
+    'Kill Bill': 8,
+    Coraline: 7.5
+};
+
+// for (let x of movieReviews) {
+//     console.log(x);
+// }
+
+for (let rating of Object.values(movieReviews)) {
+    console.log(rating);
+};
+
+for (let movie of Object.keys(movieReviews)) {
+    console.log(movie, movieReviews[movie]);
+}; 
+
+const ratings = Object.values(movieReviews);
+let avgRating = 0;
+for (let rating of ratings) {
+    avgRating += rating;
+}
+console.log(avgRating / ratings.length);
+
+for (const property in movieReviews) {
+    console.log(property, movieReviews[property]);
+}
