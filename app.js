@@ -440,86 +440,153 @@
 // }
 // console.log(`${target} is equal to ${guess}`);
 
-let subreddits = ['soccer', 'book', 'guitar', 'PS'];
-for (let i = 0; i < subreddits.length; i++) {
-    console.log(subreddits[i]);
-}
-
-for (let sub of subreddits) {
-    console.log(sub);
-}
-
-for (let char of 'string') {
-    console.log(char.toUpperCase());
-}
-
-const magicSquare = [
-    [2, 7, 6],
-    [9, 5, 1],
-    [4, 3, 8]
-];
-
-for (let i = 0; i < magicSquare.length; i++) {
-    let sum = 0;
-    let row = magicSquare[i];
-    for (let j = 0; j < row.length; j++) {
-        sum += row[j];
-    }
-    console.log(`Sum of ${i+1} row: ${sum}`)
-}
-
-for (let row of magicSquare) {
-    let sum = 0;
-    for (let item of row) {
-        sum += item;
-    }
-    console.log(`Sum of ${row} = ${sum}`)
-};
-
-const words1 = ['mail', 'milk', 'bull', 'black'];
-const words2 = ['box', 'shake', 'dog', 'berry'];
-
-let j = 0;
-for (let i = 0; i < words1.length; i++) {
-    for (j; j < words2.length; j++) {
-        console.log(words1[i] + words2[j]);
-        break;
-    }
-    j++;
-}
-
-for (let i = 0; i < words1.length; i++) {
-    console.log(`${words1[i]}${words2[i]}`);
-}
-
-const movieReviews = {
-    Arrival: 8.5,
-    Alien: 9.0,
-    Amadeus: 10,
-    'In Bruges': 9.0,
-    'Kill Bill': 8,
-    Coraline: 7.5
-};
-
-// for (let x of movieReviews) {
-//     console.log(x);
+// let subreddits = ['soccer', 'book', 'guitar', 'PS'];
+// for (let i = 0; i < subreddits.length; i++) {
+//     console.log(subreddits[i]);
 // }
 
-for (let rating of Object.values(movieReviews)) {
-    console.log(rating);
+// for (let sub of subreddits) {
+//     console.log(sub);
+// }
+
+// for (let char of 'string') {
+//     console.log(char.toUpperCase());
+// }
+
+// const magicSquare = [
+//     [2, 7, 6],
+//     [9, 5, 1],
+//     [4, 3, 8]
+// ];
+
+// for (let i = 0; i < magicSquare.length; i++) {
+//     let sum = 0;
+//     let row = magicSquare[i];
+//     for (let j = 0; j < row.length; j++) {
+//         sum += row[j];
+//     }
+//     console.log(`Sum of ${i+1} row: ${sum}`)
+// }
+
+// for (let row of magicSquare) {
+//     let sum = 0;
+//     for (let item of row) {
+//         sum += item;
+//     }
+//     console.log(`Sum of ${row} = ${sum}`)
+// };
+
+// const words1 = ['mail', 'milk', 'bull', 'black'];
+// const words2 = ['box', 'shake', 'dog', 'berry'];
+
+// let j = 0;
+// for (let i = 0; i < words1.length; i++) {
+//     for (j; j < words2.length; j++) {
+//         console.log(words1[i] + words2[j]);
+//         break;
+//     }
+//     j++;
+// }
+
+// for (let i = 0; i < words1.length; i++) {
+//     console.log(`${words1[i]}${words2[i]}`);
+// }
+
+// const movieReviews = {
+//     Arrival: 8.5,
+//     Alien: 9.0,
+//     Amadeus: 10,
+//     'In Bruges': 9.0,
+//     'Kill Bill': 8,
+//     Coraline: 7.5
+// };
+
+// // for (let x of movieReviews) {
+// //     console.log(x);
+// // }
+
+// for (let rating of Object.values(movieReviews)) {
+//     console.log(rating);
+// };
+
+// for (let movie of Object.keys(movieReviews)) {
+//     console.log(movie, movieReviews[movie]);
+// }; 
+
+// const ratings = Object.values(movieReviews);
+// let avgRating = 0;
+// for (let rating of ratings) {
+//     avgRating += rating;
+// }
+// console.log(avgRating / ratings.length);
+
+// for (const property in movieReviews) {
+//     console.log(property, movieReviews[property]);
+// }
+
+function grumpus() {
+    console.log('LEAVE ME ALONE!!!');
+}
+
+grumpus();
+
+function rollDie() {
+    let roll = Math.floor(Math.random() * 6) + 1;
+    console.log(roll);
+}
+
+rollDie();
+
+function throwDice(numRolls) {
+    for (let i = 0; i < numRolls; i++) {
+        rollDie();
+    }
+}
+
+function greet(person = 'Stranger') {
+    console.log(`Hi, ${person}!`);
+}
+greet('Anna');
+
+throwDice(3);
+
+function sum(x, y) {
+    // console.log(x + y);
+    return x + y;
+    console.log('All DONE!'); // never run!
+}
+// sum(9,4);
+console.log(sum(9,8)); 
+
+function devide(a, b) {
+    console.log(a / b);
+}
+
+devide(1,4);
+devide(4,1);
+devide(b = 4, a = 1);
+
+// function isPurple(color) {
+//     if (color.toLowerCase() === 'purple') {
+//         return true;
+//     }
+//     return false;
+// };
+
+function isPurple(color) {
+    return color.toLowerCase() === 'purple';
 };
 
-for (let movie of Object.keys(movieReviews)) {
-    console.log(movie, movieReviews[movie]);
-}; 
+console.log(isPurple('blue'));
+console.log(isPurple('purple'));
 
-const ratings = Object.values(movieReviews);
-let avgRating = 0;
-for (let rating of ratings) {
-    avgRating += rating;
+function containsPurple(arr) {
+    for (let collor of arr) {
+        if (collor === 'purple') {
+            return true;
+        }
+    }
+    return false;
 }
-console.log(avgRating / ratings.length);
 
-for (const property in movieReviews) {
-    console.log(property, movieReviews[property]);
-}
+console.log(containsPurple(['black', 'green', 'purple']));
