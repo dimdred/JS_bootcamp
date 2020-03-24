@@ -591,20 +591,30 @@
 
 // console.log(containsPurple(['black', 'green', 'purple']));
 
-function isValidPassword(password, username) {
-    if (password.length >= 8 && !password.includes(username) && !password.includes(' ')) {
-        return true;
+// function isValidPassword(password, username) {
+//     if (password.length >= 8 && !password.includes(username) && !password.includes(' ')) {
+//         return true;
+//     }
+//     return false;
+// }
+
+// console.log(isValidPassword('testtest', 'dd'));
+
+// function isValidPassword2(password, username) {
+//     const longEnough = password.length >= 8; 
+//     const tooSimilar =  password.includes(username);
+//     const hasSpace =  password.includes(' ');
+//     return (longEnough && !tooSimilar && !hasSpace);
+// }
+
+// console.log(isValidPassword2('testtes', 'dd'));
+
+function avgOfArray(arr) {
+    let sum = 0;
+    for (const item of arr) {
+        sum += item
     }
-    return false;
+    return sum / arr.length;
 }
 
-console.log(isValidPassword('testtest', 'dd'));
-
-function isValidPassword2(password, username) {
-    const longEnough = password.length >= 8; 
-    const tooSimilar =  password.includes(username);
-    const hasSpace =  password.includes(' ');
-    return (longEnough && !tooSimilar && !hasSpace);
-}
-
-console.log(isValidPassword2('testtes', 'dd'));
+console.log(avgOfArray([1,2,3,8]));
