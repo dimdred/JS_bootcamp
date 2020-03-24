@@ -524,69 +524,87 @@
 //     console.log(property, movieReviews[property]);
 // }
 
-function grumpus() {
-    console.log('LEAVE ME ALONE!!!');
-}
+// function grumpus() {
+//     console.log('LEAVE ME ALONE!!!');
+// }
 
-grumpus();
+// grumpus();
 
-function rollDie() {
-    let roll = Math.floor(Math.random() * 6) + 1;
-    console.log(roll);
-}
+// function rollDie() {
+//     let roll = Math.floor(Math.random() * 6) + 1;
+//     console.log(roll);
+// }
 
-rollDie();
+// rollDie();
 
-function throwDice(numRolls) {
-    for (let i = 0; i < numRolls; i++) {
-        rollDie();
-    }
-}
+// function throwDice(numRolls) {
+//     for (let i = 0; i < numRolls; i++) {
+//         rollDie();
+//     }
+// }
 
-function greet(person = 'Stranger') {
-    console.log(`Hi, ${person}!`);
-}
-greet('Anna');
+// function greet(person = 'Stranger') {
+//     console.log(`Hi, ${person}!`);
+// }
+// greet('Anna');
 
-throwDice(3);
+// throwDice(3);
 
-function sum(x, y) {
-    // console.log(x + y);
-    return x + y;
-    console.log('All DONE!'); // never run!
-}
-// sum(9,4);
-console.log(sum(9,8)); 
+// function sum(x, y) {
+//     // console.log(x + y);
+//     return x + y;
+//     console.log('All DONE!'); // never run!
+// }
+// // sum(9,4);
+// console.log(sum(9,8)); 
 
-function devide(a, b) {
-    console.log(a / b);
-}
+// function devide(a, b) {
+//     console.log(a / b);
+// }
 
-devide(1,4);
-devide(4,1);
-devide(b = 4, a = 1);
+// devide(1,4);
+// devide(4,1);
+// devide(b = 4, a = 1);
+
+// // function isPurple(color) {
+// //     if (color.toLowerCase() === 'purple') {
+// //         return true;
+// //     }
+// //     return false;
+// // };
 
 // function isPurple(color) {
-//     if (color.toLowerCase() === 'purple') {
-//         return true;
-//     }
-//     return false;
+//     return color.toLowerCase() === 'purple';
 // };
 
-function isPurple(color) {
-    return color.toLowerCase() === 'purple';
-};
+// console.log(isPurple('blue'));
+// console.log(isPurple('purple'));
 
-console.log(isPurple('blue'));
-console.log(isPurple('purple'));
+// function containsPurple(arr) {
+//     for (let collor of arr) {
+//         if (collor === 'purple') {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
 
-function containsPurple(arr) {
-    for (let collor of arr) {
-        if (collor === 'purple') {
-            return true;
-        }
+// console.log(containsPurple(['black', 'green', 'purple']));
+
+function isValidPassword(password, username) {
+    if (password.length >= 8 && !password.includes(username) && !password.includes(' ')) {
+        return true;
     }
     return false;
 }
 
-console.log(containsPurple(['black', 'green', 'purple']));
+console.log(isValidPassword('testtest', 'dd'));
+
+function isValidPassword2(password, username) {
+    const longEnough = password.length >= 8; 
+    const tooSimilar =  password.includes(username);
+    const hasSpace =  password.includes(' ');
+    return (longEnough && !tooSimilar && !hasSpace);
+}
+
+console.log(isValidPassword2('testtes', 'dd'));
