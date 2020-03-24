@@ -618,3 +618,11 @@ function avgOfArray(arr) {
 }
 
 console.log(avgOfArray([1,2,3,8]));
+
+let numbers = [1,2,3,8];
+let avg = 0;
+
+numbers.forEach(function sum(item) {
+    avg += (item / numbers.length);
+});
+console.log(avg);
