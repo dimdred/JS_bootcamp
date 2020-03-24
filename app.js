@@ -609,20 +609,32 @@
 
 // console.log(isValidPassword2('testtes', 'dd'));
 
-function avgOfArray(arr) {
-    let sum = 0;
-    for (const item of arr) {
-        sum += item
+// function avgOfArray(arr) {
+//     let sum = 0;
+//     for (const item of arr) {
+//         sum += item
+//     }
+//     return sum / arr.length;
+// }
+
+// console.log(avgOfArray([1,2,3,8]));
+
+// let numbers = [1,2,3,8];
+// let avg = 0;
+
+// numbers.forEach(function sum(item) {
+//     avg += (item / numbers.length);
+// });
+// console.log(avg);
+
+function isPangram(str) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    for (const char of alphabet) {
+        if(str.toLowerCase().indexOf(char) === -1) {
+            return false;
+        }
     }
-    return sum / arr.length;
+    return true;
 }
 
-console.log(avgOfArray([1,2,3,8]));
-
-let numbers = [1,2,3,8];
-let avg = 0;
-
-numbers.forEach(function sum(item) {
-    avg += (item / numbers.length);
-});
-console.log(avg);
+console.log(isPangram('The five boxing wizards jump quickly'));
