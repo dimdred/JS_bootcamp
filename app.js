@@ -627,14 +627,25 @@
 // });
 // console.log(avg);
 
-function isPangram(str) {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    for (const char of alphabet) {
-        if(str.toLowerCase().indexOf(char) === -1) {
-            return false;
-        }
-    }
-    return true;
+// function isPangram(str) {
+//     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+//     for (const char of alphabet) {
+//         if(str.toLowerCase().indexOf(char) === -1) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(isPangram('The five boxing wizards jump quickly'));
+
+function getCard() {
+    const valueList = [6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+    const suitList = ['clubs', 'spades', 'hearts', 'diamonds'];
+    return {value: randomItem(valueList), suit: randomItem(suitList)};
 }
 
-console.log(isPangram('The five boxing wizards jump quickly'));
+function randomItem(arr) {
+    let idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+}
