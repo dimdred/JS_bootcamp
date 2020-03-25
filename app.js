@@ -639,13 +639,18 @@
 
 // console.log(isPangram('The five boxing wizards jump quickly'));
 
-function getCard() {
-    const valueList = [6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
-    const suitList = ['clubs', 'spades', 'hearts', 'diamonds'];
-    return {value: randomItem(valueList), suit: randomItem(suitList)};
-}
+// function getCard() {
+//     const valueList = [6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+//     const suitList = ['clubs', 'spades', 'hearts', 'diamonds'];
+//     return {value: randomItem(valueList), suit: randomItem(suitList)};
+// }
 
-function randomItem(arr) {
-    let idx = Math.floor(Math.random() * arr.length);
-    return arr[idx];
+// function randomItem(arr) {
+//     let idx = Math.floor(Math.random() * arr.length);
+//     return arr[idx];
+// }
+
+function reverseStr(str) {
+    let arr = str.split('').reverse();
+    return arr.join('');
 }
