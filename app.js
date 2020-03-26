@@ -655,19 +655,50 @@
 //     return arr.join('');
 // }
 
+// function add(x,y) {
+//     return x + y;
+// }
+
+// const sum = function (x,y) {
+//     return x + y;
+// }
+
+// const product = function multiply(x,y) {
+//     return x * y;
+// }
+
+// console.log(add(2,3));
+// console.log(sum(3,4));
+// console.log(product(4,5));
+// console.log(multiply(4,5)); // fail, multiply is not defined as function
+
 function add(x,y) {
     return x + y;
 }
 
-const sum = function (x,y) {
-    return x + y;
+const subtract = function (x,y) {
+    return x - y;
 }
 
-const product = function multiply(x,y) {
+function multiply(x,y) {
     return x * y;
 }
 
-console.log(add(2,3));
-console.log(sum(3,4));
-console.log(product(4,5));
-console.log(multiply(4,5)); // fail, multiply is not defined as function
+const devide = function (x,y) {
+    return x / y;
+}
+
+const operations = [add, subtract, multiply, devide];
+console.log(operations[1](7,2));
+console.log(operations[2](7,2));
+
+for (const func of operations) {
+    let result = func(30,5)
+    console.log(result);
+}
+
+const thing = {
+    doSomething: multiply
+}
+
+console.log(thing.doSomething(3,5));
