@@ -650,7 +650,24 @@
 //     return arr[idx];
 // }
 
-function reverseStr(str) {
-    let arr = str.split('').reverse();
-    return arr.join('');
+// function reverseStr(str) {
+//     let arr = str.split('').reverse();
+//     return arr.join('');
+// }
+
+function add(x,y) {
+    return x + y;
 }
+
+const sum = function (x,y) {
+    return x + y;
+}
+
+const product = function multiply(x,y) {
+    return x * y;
+}
+
+console.log(add(2,3));
+console.log(sum(3,4));
+console.log(product(4,5));
+console.log(multiply(4,5)); // fail, multiply is not defined as function
