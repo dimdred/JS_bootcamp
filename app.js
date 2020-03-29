@@ -672,33 +672,66 @@
 // console.log(product(4,5));
 // console.log(multiply(4,5)); // fail, multiply is not defined as function
 
-function add(x,y) {
-    return x + y;
+// function add(x,y) {
+//     return x + y;
+// }
+
+// const subtract = function (x,y) {
+//     return x - y;
+// }
+
+// function multiply(x,y) {
+//     return x * y;
+// }
+
+// const devide = function (x,y) {
+//     return x / y;
+// }
+
+// const operations = [add, subtract, multiply, devide];
+// console.log(operations[1](7,2));
+// console.log(operations[2](7,2));
+
+// for (const func of operations) {
+//     let result = func(30,5)
+//     console.log(result);
+// }
+
+// const thing = {
+//     doSomething: multiply
+// }
+
+// console.log(thing.doSomething(3,5));
+
+function callThreeTimes(f) {
+    f();
+    f();
+    f();
 }
 
-const subtract = function (x,y) {
-    return x - y;
+function hi() {
+    console.log('Hello!');
 }
 
-function multiply(x,y) {
-    return x * y;
+function bye() {
+    console.log('Bye!');
 }
 
-const devide = function (x,y) {
-    return x / y;
+function repeatNTimes(action, n) {
+    for (let i = 0; i < n; i++) {
+        action();
+    }
+}
+repeatNTimes(hi, 2);
+
+function pickOne(fun1, fun2) {
+    const rand = Math.random();
+    if (rand < 0.5) { 
+        fun1();
+    }
+    else {
+        fun2();
+    }
 }
 
-const operations = [add, subtract, multiply, devide];
-console.log(operations[1](7,2));
-console.log(operations[2](7,2));
-
-for (const func of operations) {
-    let result = func(30,5)
-    console.log(result);
-}
-
-const thing = {
-    doSomething: multiply
-}
-
-console.log(thing.doSomething(3,5));
+pickOne(hi, bye);
