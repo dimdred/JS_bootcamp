@@ -761,17 +761,36 @@
 // const isNiceWeather = makeBetweenFunc(60,80);
 // console.log(isNiceWeather(75));
 
-function grumpus() {
-    alert('Go Away!')
+// function grumpus() {
+//     alert('Go Away!')
+// }
+
+// setTimeout(grumpus, 5000);
+
+// setTimeout(function() {
+//     alert('Welcome!');
+// }, 5000);
+
+// const btn = document.querySelector('button');
+// btn.addEventListener('click', function() {
+//     alert('Why did you click me!?')
+// });
+
+console.log(animal);
+var animal = 'Tapir'; //hoisted
+
+// console.log(shrimp);
+// let shrimp = 'Tiger Shrimp'; // error
+// console.log(bird);
+// const bird = 'Eagle'; // error
+
+howl(); //hoisted
+
+function howl() {
+    console.log('AWOOOO!')
 }
 
-setTimeout(grumpus, 5000);
-
-setTimeout(function() {
-    alert('Welcome!');
-}, 5000);
-
-const btn = document.querySelector('button');
-btn.addEventListener('click', function() {
-    alert('Why did you click me!?')
-});
+hoo(); //error, hoo is undefined.
+var hoo = function() {
+    console.log('hooooo!');
+}
