@@ -736,27 +736,42 @@
 
 // pickOne(hi, bye);
 
-function multiplyBy(num) {
-    return function(x) {
-        return x * num;
-    }
+// function multiplyBy(num) {
+//     return function(x) {
+//         return x * num;
+//     }
+// }
+
+// const triple = multiplyBy(3);
+// const double = multiplyBy(2);
+// console.log(triple(8));
+// console.log(double(8));
+
+// const isChild = makeBetweenFunc(0,18);
+
+// function makeBetweenFunc(d1, d2) {
+//     return function(x) {
+//         return x >= d1 && x <= d2;
+//     }
+// }
+
+// console.log(isChild(5));
+// console.log(isChild(20));
+
+// const isNiceWeather = makeBetweenFunc(60,80);
+// console.log(isNiceWeather(75));
+
+function grumpus() {
+    alert('Go Away!')
 }
 
-const triple = multiplyBy(3);
-const double = multiplyBy(2);
-console.log(triple(8));
-console.log(double(8));
+setTimeout(grumpus, 5000);
 
-const isChild = makeBetweenFunc(0,18);
+setTimeout(function() {
+    alert('Welcome!');
+}, 5000);
 
-function makeBetweenFunc(d1, d2) {
-    return function(x) {
-        return x >= d1 && x <= d2;
-    }
-}
-
-console.log(isChild(5));
-console.log(isChild(20));
-
-const isNiceWeather = makeBetweenFunc(60,80);
-console.log(isNiceWeather(75));
+const btn = document.querySelector('button');
+btn.addEventListener('click', function() {
+    alert('Why did you click me!?')
+});
