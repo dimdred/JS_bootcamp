@@ -703,35 +703,60 @@
 
 // console.log(thing.doSomething(3,5));
 
-function callThreeTimes(f) {
-    f();
-    f();
-    f();
-}
+// function callThreeTimes(f) {
+//     f();
+//     f();
+//     f();
+// }
 
-function hi() {
-    console.log('Hello!');
-}
+// function hi() {
+//     console.log('Hello!');
+// }
 
-function bye() {
-    console.log('Bye!');
-}
+// function bye() {
+//     console.log('Bye!');
+// }
 
-function repeatNTimes(action, n) {
-    for (let i = 0; i < n; i++) {
-        action();
+// function repeatNTimes(action, n) {
+//     for (let i = 0; i < n; i++) {
+//         action();
+//     }
+// }
+// repeatNTimes(hi, 2);
+
+// function pickOne(fun1, fun2) {
+//     const rand = Math.random();
+//     if (rand < 0.5) { 
+//         fun1();
+//     }
+//     else {
+//         fun2();
+//     }
+// }
+
+// pickOne(hi, bye);
+
+function multiplyBy(num) {
+    return function(x) {
+        return x * num;
     }
 }
-repeatNTimes(hi, 2);
 
-function pickOne(fun1, fun2) {
-    const rand = Math.random();
-    if (rand < 0.5) { 
-        fun1();
-    }
-    else {
-        fun2();
+const triple = multiplyBy(3);
+const double = multiplyBy(2);
+console.log(triple(8));
+console.log(double(8));
+
+const isChild = makeBetweenFunc(0,18);
+
+function makeBetweenFunc(d1, d2) {
+    return function(x) {
+        return x >= d1 && x <= d2;
     }
 }
 
-pickOne(hi, bye);
+console.log(isChild(5));
+console.log(isChild(20));
+
+const isNiceWeather = makeBetweenFunc(60,80);
+console.log(isNiceWeather(75));
