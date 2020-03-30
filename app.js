@@ -776,21 +776,64 @@
 //     alert('Why did you click me!?')
 // });
 
-console.log(animal);
-var animal = 'Tapir'; //hoisted
+// console.log(animal);
+// var animal = 'Tapir'; //hoisted
 
 // console.log(shrimp);
 // let shrimp = 'Tiger Shrimp'; // error
 // console.log(bird);
 // const bird = 'Eagle'; // error
 
-howl(); //hoisted
+// howl(); //hoisted
 
-function howl() {
-    console.log('AWOOOO!')
+// function howl() {
+//     console.log('AWOOOO!')
+// }
+
+// hoo(); //error, hoo is undefined.
+// var hoo = function() {
+//     console.log('hooooo!');
+// }
+
+const nums = [9, 8, 7, 6, 5]
+
+nums.forEach(function (n) {
+    console.log(n ** 2);
+})
+
+function printTriple(n) {
+    console.log(n * 3);
 }
 
-hoo(); //error, hoo is undefined.
-var hoo = function() {
-    console.log('hooooo!');
-}
+nums.forEach(printTriple);
+
+nums.forEach(function(num, idx) {
+    console.log(idx, num*2);
+})
+
+const books = [
+    {
+        title: 'Good Omens',
+        authors: ['Terry', 'Neil'],
+        rating: 4.25
+    },
+    {
+        title: 'Bone: The Complete Edition',
+        authors: ['Jeff Smith'],
+        rating: 4.42
+    },
+    {
+        title: 'American Gods',
+        authors: ['Neil Gaiman'],
+        rating: 4.11
+    },
+    {
+        title: 'A Gentelman in Moscow',
+        authors: ['Amor Towles'],
+        rating: 4.36
+    }
+]
+
+books.forEach(function(book) {
+    console.log(book.title.toUpperCase());
+})
