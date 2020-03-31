@@ -883,19 +883,45 @@
 // })
 // console.log(titles);
 
-const square = function (x) {
-    return x * x;
-}
+// const square = function (x) {
+//     return x * x;
+// }
 
-//the same
-const square2 = (x) => { return x * x; }
-console.log(square(3), square2(3));
+// //the same
+// const square2 = (x) => { return x * x; }
+// console.log(square(3), square2(3));
 
-const isEven = num => { return num % 2 === 0; }
-console.log(isEven(8));
+// const isEven = num => { return num % 2 === 0; }
+// console.log(isEven(8));
 
-const multiply = (x, y) => { return x * y; }
-console.log(multiply(4, 5));
+// const multiply = (x, y) => { return x * y; }
+// console.log(multiply(4, 5));
 
-const greet = () => { return console.log('HI!'); }
-greet();
+// const greet = () => { return console.log('HI!'); }
+// greet();
+
+const square1 = x => { return x * x };
+
+// the same
+const square2 = x => (x * x);
+
+// the same
+const square3 = x => x * x;
+
+console.log(square1(4), square2(5), square3(6));
+
+const nums = [1, 2, 3, 4, 5, 6]
+
+const doubleNums = nums.map(num => { return num * 2 });
+const doubleNums2 = nums.map(num => (num * 2));
+console.log(doubleNums, doubleNums2);
+
+const parityList = nums.map(num => {
+    if (num % 2 === 0) return 'even'
+    return 'odd';
+})
+
+const parityList2 = nums.map(num => (
+    num % 2 === 0 ? 'even' : 'odd' // if = ? else = :
+))
+console.log(parityList, parityList2);
