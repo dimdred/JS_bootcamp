@@ -811,28 +811,28 @@
 //     console.log(idx, num*2);
 // })
 
-// const books = [
-//     {
-//         title: 'Good Omens',
-//         authors: ['Terry', 'Neil'],
-//         rating: 4.25
-//     },
-//     {
-//         title: 'Bone: The Complete Edition',
-//         authors: ['Jeff Smith'],
-//         rating: 4.42
-//     },
-//     {
-//         title: 'American Gods',
-//         authors: ['Neil Gaiman'],
-//         rating: 4.11
-//     },
-//     {
-//         title: 'A Gentelman in Moscow',
-//         authors: ['Amor Towles'],
-//         rating: 4.36
-//     }
-// ]
+const books = [
+    {
+        title: 'Good Omens',
+        authors: ['Terry', 'Neil'],
+        rating: 4.25
+    },
+    {
+        title: 'Bone: The Complete Edition',
+        authors: ['Jeff Smith'],
+        rating: 4.42
+    },
+    {
+        title: 'American Gods',
+        authors: ['Neil Gaiman'],
+        rating: 4.11
+    },
+    {
+        title: 'A Gentelman in Moscow',
+        authors: ['Amor Towles'],
+        rating: 4.36
+    }
+]
 
 // books.forEach(function(book) {
 //     console.log(book.title.toUpperCase());
@@ -900,28 +900,49 @@
 // const greet = () => { return console.log('HI!'); }
 // greet();
 
-const square1 = x => { return x * x };
+// const square1 = x => { return x * x };
 
-// the same
-const square2 = x => (x * x);
+// // the same
+// const square2 = x => (x * x);
 
-// the same
-const square3 = x => x * x;
+// // the same
+// const square3 = x => x * x;
 
-console.log(square1(4), square2(5), square3(6));
+// console.log(square1(4), square2(5), square3(6));
 
-const nums = [1, 2, 3, 4, 5, 6]
+// const nums = [1, 2, 3, 4, 5, 6]
 
-const doubleNums = nums.map(num => { return num * 2 });
-const doubleNums2 = nums.map(num => (num * 2));
-console.log(doubleNums, doubleNums2);
+// const doubleNums = nums.map(num => { return num * 2 });
+// const doubleNums2 = nums.map(num => (num * 2));
+// console.log(doubleNums, doubleNums2);
 
-const parityList = nums.map(num => {
-    if (num % 2 === 0) return 'even'
-    return 'odd';
-})
+// const parityList = nums.map(num => {
+//     if (num % 2 === 0) return 'even'
+//     return 'odd';
+// })
 
-const parityList2 = nums.map(num => (
-    num % 2 === 0 ? 'even' : 'odd' // if = ? else = :
-))
-console.log(parityList, parityList2);
+// const parityList2 = nums.map(num => (
+//     num % 2 === 0 ? 'even' : 'odd' // if = ? else = :
+// ))
+// console.log(parityList, parityList2);
+
+const movies = [
+    'The Mr. Fox',
+    'Mr. and Mrs. Smith',
+    'Mrs. Doubtfire',
+    'Mr. Deeds'
+]
+
+const movie = movies.find(movie => { return movie.includes('Mrs') });
+console.log(movie); // stop after first find
+
+const movie2 = movies.find(m => (
+    m.indexOf('Mrs') === 0
+));
+console.log(movie2);
+
+const firstHighRatedBook = books.find(b => b.rating > 4.3);
+console.log(firstHighRatedBook);
+
+const neilBook = books.find(b => b.authors.includes('Neil Gaiman'));
+console.log(neilBook);
