@@ -811,74 +811,91 @@
 //     console.log(idx, num*2);
 // })
 
-const books = [
-    {
-        title: 'Good Omens',
-        authors: ['Terry', 'Neil'],
-        rating: 4.25
-    },
-    {
-        title: 'Bone: The Complete Edition',
-        authors: ['Jeff Smith'],
-        rating: 4.42
-    },
-    {
-        title: 'American Gods',
-        authors: ['Neil Gaiman'],
-        rating: 4.11
-    },
-    {
-        title: 'A Gentelman in Moscow',
-        authors: ['Amor Towles'],
-        rating: 4.36
-    }
-]
+// const books = [
+//     {
+//         title: 'Good Omens',
+//         authors: ['Terry', 'Neil'],
+//         rating: 4.25
+//     },
+//     {
+//         title: 'Bone: The Complete Edition',
+//         authors: ['Jeff Smith'],
+//         rating: 4.42
+//     },
+//     {
+//         title: 'American Gods',
+//         authors: ['Neil Gaiman'],
+//         rating: 4.11
+//     },
+//     {
+//         title: 'A Gentelman in Moscow',
+//         authors: ['Amor Towles'],
+//         rating: 4.36
+//     }
+// ]
 
 // books.forEach(function(book) {
 //     console.log(book.title.toUpperCase());
 // })
 
-const numbers = [20, 21, 22, 23, 24, 25];
-const words = ['ahaha', 'azaza', 'rsvp', 'ololo'];
+// const numbers = [20, 21, 22, 23, 24, 25];
+// const words = ['ahaha', 'azaza', 'rsvp', 'ololo'];
 
-const doubles = numbers.map(function(num) {
-    return num * 2;
-})
-console.log(doubles);
+// const doubles = numbers.map(function(num) {
+//     return num * 2;
+// })
+// console.log(doubles);
 
-const numObj = numbers.map(function(num) {
-    let isEven;
-    if(num % 2 == 0) {
-        isEven = true;
-    }
-    else {
-        isEven = false;
-    }
-    return {number: num, isEven: isEven}
-})
-console.log(numObj);
+// const numObj = numbers.map(function(num) {
+//     let isEven;
+//     if(num % 2 == 0) {
+//         isEven = true;
+//     }
+//     else {
+//         isEven = false;
+//     }
+//     return {number: num, isEven: isEven}
+// })
+// console.log(numObj);
 
-const numDetails = numbers.map(function(n){
-    return {
-        Number: n,
-        isEven: n % 2 === 0
-    }
-})
-console.log(numDetails);
+// const numDetails = numbers.map(function(n){
+//     return {
+//         Number: n,
+//         isEven: n % 2 === 0
+//     }
+// })
+// console.log(numDetails);
 
-const revAbbrevs = words.map(function(word) {
-    return word.toUpperCase().split('').reverse().join('.');
-})
-console.log(revAbbrevs);
+// const revAbbrevs = words.map(function(word) {
+//     return word.toUpperCase().split('').reverse().join('.');
+// })
+// console.log(revAbbrevs);
 
-const myBooks = books.map(function(book) {
-    if(book.rating > 4.3) {
-        return {title: book.title, author: book.authors};
-    }
-})
-console.log(myBooks);
+// const myBooks = books.map(function(book) {
+//     if(book.rating > 4.3) {
+//         return {title: book.title, author: book.authors};
+//     }
+// })
+// console.log(myBooks);
 
-const titles = books.map(function(b) {
-    return b.title
-})
-console.log(titles);
+// const titles = books.map(function(b) {
+//     return b.title
+// })
+// console.log(titles);
+
+const square = function (x) {
+    return x * x;
+}
+
+//the same
+const square2 = (x) => { return x * x; }
+console.log(square(3), square2(3));
+
+const isEven = num => { return num % 2 === 0; }
+console.log(isEven(8));
+
+const multiply = (x, y) => { return x * y; }
+console.log(multiply(4, 5));
+
+const greet = () => { return console.log('HI!'); }
+greet();
