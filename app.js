@@ -795,21 +795,21 @@
 //     console.log('hooooo!');
 // }
 
-const nums = [9, 8, 7, 6, 5]
+// const nums = [9, 8, 7, 6, 5]
 
-nums.forEach(function (n) {
-    console.log(n ** 2);
-})
+// nums.forEach(function (n) {
+//     console.log(n ** 2);
+// })
 
-function printTriple(n) {
-    console.log(n * 3);
-}
+// function printTriple(n) {
+//     console.log(n * 3);
+// }
 
-nums.forEach(printTriple);
+// nums.forEach(printTriple);
 
-nums.forEach(function(num, idx) {
-    console.log(idx, num*2);
-})
+// nums.forEach(function(num, idx) {
+//     console.log(idx, num*2);
+// })
 
 const books = [
     {
@@ -834,6 +834,51 @@ const books = [
     }
 ]
 
-books.forEach(function(book) {
-    console.log(book.title.toUpperCase());
+// books.forEach(function(book) {
+//     console.log(book.title.toUpperCase());
+// })
+
+const numbers = [20, 21, 22, 23, 24, 25];
+const words = ['ahaha', 'azaza', 'rsvp', 'ololo'];
+
+const doubles = numbers.map(function(num) {
+    return num * 2;
 })
+console.log(doubles);
+
+const numObj = numbers.map(function(num) {
+    let isEven;
+    if(num % 2 == 0) {
+        isEven = true;
+    }
+    else {
+        isEven = false;
+    }
+    return {number: num, isEven: isEven}
+})
+console.log(numObj);
+
+const numDetails = numbers.map(function(n){
+    return {
+        Number: n,
+        isEven: n % 2 === 0
+    }
+})
+console.log(numDetails);
+
+const revAbbrevs = words.map(function(word) {
+    return word.toUpperCase().split('').reverse().join('.');
+})
+console.log(revAbbrevs);
+
+const myBooks = books.map(function(book) {
+    if(book.rating > 4.3) {
+        return {title: book.title, author: book.authors};
+    }
+})
+console.log(myBooks);
+
+const titles = books.map(function(b) {
+    return b.title
+})
+console.log(titles);
