@@ -971,25 +971,42 @@ const books = [
 // )
 // console.log(results);
 
-const words = ['dog', 'dig', 'log', 'bag', 'wag'];
+// const words = ['dog', 'dig', 'log', 'bag', 'wag'];
 
-const threeSymbols = words.every(word => (word.length === 3))  // return true, all elements has lenght 3;
-console.log(threeSymbols);
+// const threeSymbols = words.every(word => (word.length === 3))  // return true, all elements has lenght 3;
+// console.log(threeSymbols);
 
-const gLetter = words.every(word => word.includes('g'))
-console.log(gLetter);
+// const gLetter = words.every(word => word.includes('g'))
+// console.log(gLetter);
 
-const dFirstLetter = words.some(word => {
-    const firstLetter = word[0];
-    return firstLetter === 'd';
-})
-console.log(dFirstLetter);
+// const dFirstLetter = words.some(word => {
+//     const firstLetter = word[0];
+//     return firstLetter === 'd';
+// })
+// console.log(dFirstLetter);
 
-const highRating = books.every(book => book.rating > 3.5);
-console.log(highRating);
+// const highRating = books.every(book => book.rating > 3.5);
+// console.log(highRating);
 
-const twoAuthors = books.some(book => {
-    const numAuthors = book.authors.length;
-    return numAuthors === 2;
-})
-console.log(twoAuthors);
+// const twoAuthors = books.some(book => {
+//     const numAuthors = book.authors.length;
+//     return numAuthors === 2;
+// })
+// console.log(twoAuthors);
+
+const prices = [400.50, 3000, 99.99, 10, 12.00, 9500, 1000];
+console.log(prices.sort());
+
+const ascSort = prices.slice().sort((a,b) => a - b);
+console.log(ascSort);
+
+// const descSort = prices.sort((a,b) => b - a);
+const descSort = prices.slice().sort((a,b) => b - a); // slice() - copy data from array.
+console.log(descSort);
+console.log(prices); // the original array was mutated
+
+const sortedAscBooks = books.slice().sort((a,b) => (a.rating - b.rating));
+console.log(sortedAscBooks);
+
+const sortedDscBooks = books.slice().sort((a,b) => (b.rating - a.rating));
+console.log(sortedDscBooks);
