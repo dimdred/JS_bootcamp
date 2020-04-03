@@ -815,22 +815,26 @@ const books = [
     {
         title: 'Good Omens',
         authors: ['Terry', 'Neil'],
-        rating: 4.25
+        rating: 4.25,
+        genre: ['fiction', 'fantasy']
     },
     {
         title: 'Bone: The Complete Edition',
         authors: ['Jeff Smith'],
-        rating: 4.42
+        rating: 4.42,
+        genre: ['novel', 'fantasy']
     },
     {
         title: 'American Gods',
         authors: ['Neil Gaiman'],
-        rating: 4.11
+        rating: 4.11,
+        genre: ['fiction', 'fantasy']
     },
     {
         title: 'A Gentelman in Moscow',
         authors: ['Amor Towles'],
-        rating: 4.36
+        rating: 4.36,
+        genre: ['fiction', 'historical fiction']
     }
 ]
 
@@ -926,23 +930,43 @@ const books = [
 // ))
 // console.log(parityList, parityList2);
 
-const movies = [
-    'The Mr. Fox',
-    'Mr. and Mrs. Smith',
-    'Mrs. Doubtfire',
-    'Mr. Deeds'
-]
+// const movies = [
+//     'The Mr. Fox',
+//     'Mr. and Mrs. Smith',
+//     'Mrs. Doubtfire',
+//     'Mr. Deeds'
+// ]
 
-const movie = movies.find(movie => { return movie.includes('Mrs') });
-console.log(movie); // stop after first find
+// const movie = movies.find(movie => { return movie.includes('Mrs') });
+// console.log(movie); // stop after first find
 
-const movie2 = movies.find(m => (
-    m.indexOf('Mrs') === 0
-));
-console.log(movie2);
+// const movie2 = movies.find(m => (
+//     m.indexOf('Mrs') === 0
+// ));
+// console.log(movie2);
 
-const firstHighRatedBook = books.find(b => b.rating > 4.3);
-console.log(firstHighRatedBook);
+// const firstHighRatedBook = books.find(b => b.rating > 4.3);
+// console.log(firstHighRatedBook);
 
-const neilBook = books.find(b => b.authors.includes('Neil Gaiman'));
-console.log(neilBook);
+// const neilBook = books.find(b => b.authors.includes('Neil Gaiman'));
+// console.log(neilBook);
+
+const nums = [22, 51, 87, 19, 5, 38, 13, 46, 11, 60];
+
+const evenNums = nums.filter(n => (n % 2 === 0));
+console.log(evenNums);
+
+const bigNums = nums.filter(n => (n >= 50));
+console.log(bigNums);
+
+const goodBooks = books.filter(book => (book.rating >= 4.3));
+console.log(goodBooks);
+
+const fantasyBooks = books.filter(book => (book.genre.includes('fantasy')));
+console.log(fantasyBooks);
+
+let query = 'the';
+const results = books.filter(b => (
+    b.title.toLowerCase().includes(query.toLowerCase()))
+)
+console.log(results);
