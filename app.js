@@ -951,22 +951,45 @@ const books = [
 // const neilBook = books.find(b => b.authors.includes('Neil Gaiman'));
 // console.log(neilBook);
 
-const nums = [22, 51, 87, 19, 5, 38, 13, 46, 11, 60];
+// const nums = [22, 51, 87, 19, 5, 38, 13, 46, 11, 60];
 
-const evenNums = nums.filter(n => (n % 2 === 0));
-console.log(evenNums);
+// const evenNums = nums.filter(n => (n % 2 === 0));
+// console.log(evenNums);
 
-const bigNums = nums.filter(n => (n >= 50));
-console.log(bigNums);
+// const bigNums = nums.filter(n => (n >= 50));
+// console.log(bigNums);
 
-const goodBooks = books.filter(book => (book.rating >= 4.3));
-console.log(goodBooks);
+// const goodBooks = books.filter(book => (book.rating >= 4.3));
+// console.log(goodBooks);
 
-const fantasyBooks = books.filter(book => (book.genre.includes('fantasy')));
-console.log(fantasyBooks);
+// const fantasyBooks = books.filter(book => (book.genre.includes('fantasy')));
+// console.log(fantasyBooks);
 
-let query = 'the';
-const results = books.filter(b => (
-    b.title.toLowerCase().includes(query.toLowerCase()))
-)
-console.log(results);
+// let query = 'the';
+// const results = books.filter(b => (
+//     b.title.toLowerCase().includes(query.toLowerCase()))
+// )
+// console.log(results);
+
+const words = ['dog', 'dig', 'log', 'bag', 'wag'];
+
+const threeSymbols = words.every(word => (word.length === 3))  // return true, all elements has lenght 3;
+console.log(threeSymbols);
+
+const gLetter = words.every(word => word.includes('g'))
+console.log(gLetter);
+
+const dFirstLetter = words.some(word => {
+    const firstLetter = word[0];
+    return firstLetter === 'd';
+})
+console.log(dFirstLetter);
+
+const highRating = books.every(book => book.rating > 3.5);
+console.log(highRating);
+
+const twoAuthors = books.some(book => {
+    const numAuthors = book.authors.length;
+    return numAuthors === 2;
+})
+console.log(twoAuthors);
