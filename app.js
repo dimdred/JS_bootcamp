@@ -815,7 +815,7 @@ const books = [
     {
         title: 'Good Omens',
         authors: ['Terry', 'Neil'],
-        rating: 4.25,
+        rating: 3.25,
         genre: ['fiction', 'fantasy']
     },
     {
@@ -835,6 +835,12 @@ const books = [
         authors: ['Amor Towles'],
         rating: 4.36,
         genre: ['fiction', 'historical fiction']
+    },
+    {
+        title: 'Changing My Mind',
+        authors: ['Zadie Smith'],
+        rating: 3.83,
+        genre: ['nonfiction', 'essays']
     }
 ]
 
@@ -994,19 +1000,62 @@ const books = [
 // })
 // console.log(twoAuthors);
 
-const prices = [400.50, 3000, 99.99, 10, 12.00, 9500, 1000];
-console.log(prices.sort());
+// const prices = [400.50, 3000, 99.99, 10, 12.00, 9500, 1000];
+// console.log(prices.sort());
 
-const ascSort = prices.slice().sort((a,b) => a - b);
-console.log(ascSort);
+// const ascSort = prices.slice().sort((a,b) => a - b);
+// console.log(ascSort);
 
-// const descSort = prices.sort((a,b) => b - a);
-const descSort = prices.slice().sort((a,b) => b - a); // slice() - copy data from array.
-console.log(descSort);
-console.log(prices); // the original array was mutated
+// // const descSort = prices.sort((a,b) => b - a);
+// const descSort = prices.slice().sort((a,b) => b - a); // slice() - copy data from array.
+// console.log(descSort);
+// console.log(prices); // the original array was mutated
 
-const sortedAscBooks = books.slice().sort((a,b) => (a.rating - b.rating));
-console.log(sortedAscBooks);
+// const sortedAscBooks = books.slice().sort((a,b) => (a.rating - b.rating));
+// console.log(sortedAscBooks);
 
-const sortedDscBooks = books.slice().sort((a,b) => (b.rating - a.rating));
-console.log(sortedDscBooks);
+// const sortedDscBooks = books.slice().sort((a,b) => (b.rating - a.rating));
+// console.log(sortedDscBooks);
+
+const nums = [3, 4, 5, 6, 7]
+const total = nums.reduce((acc, cur) => {
+    return acc + cur;
+})
+console.log(total);
+const multiply = nums.reduce((prev, cur) => (prev * cur));
+console.log(multiply);
+
+const grades = [87, 64, 91, 76, 98, 84, 69, 91]
+const maxGrade = grades.reduce((prevVal, currVal) => {
+    if(prevVal > currVal) return prevVal;
+    return currVal;
+})
+console.log(maxGrade);
+
+const minGrade = grades.reduce((prevVal, currVal) => (prevVal < currVal ? prevVal : currVal))
+console.log(minGrade);
+
+const minGrade2 = grades.reduce((prevVal, currVal) => (Math.min(prevVal, currVal)))
+console.log(minGrade2);
+
+const newSum = [10, 20, 30, 40, 50].reduce((sum, curr) => (sum + curr), 100); // 100 - initial number
+console.log(newSum);
+
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'y', 'y', 'n', 'y', 'n', 'n', 'y']
+const voteObj = votes.reduce((tally, val) => {
+    if(tally[val]) {
+        tally[val]++;
+    } else {
+        tally[val] = 1;
+    }
+    return tally;
+}, {}) // {} - initial object
+console.log(voteObj);
+
+const groupedByRatingBooks = books.reduce((groupedBooks, curBook) => {
+    const key = Math.floor(curBook.rating);
+    if(!groupedBooks[key]) groupedBooks[key] = [];
+    groupedBooks[key].push(curBook);
+    return groupedBooks;
+}, {})
+console.log(groupedByRatingBooks);
