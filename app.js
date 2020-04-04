@@ -1060,14 +1060,95 @@ const books = [
 // }, {})
 // console.log(groupedByRatingBooks);
 
-function multiply(x, y=1) {
-    return x * y;
+// function multiply(x, y=1) {
+//     return x * y;
+// }
+
+// function multiply(x = 1, y) {
+//     return x * y;
+// }
+// console.log(multiply(2)); // Nan (x=2, y=undifined) default parameter should be in the end
+
+// const greet = (person, greeting='Hi', punctuation) => (console.log(`${greeting}, ${person} ${punctuation}`));
+// greet('?', 'Oleh'); // the order is important!
+
+console.log(Math.max(2, 25, 9, 13, 7, 34));
+console.log(Math.min(2, 25, 9, 13, 7, 34));
+const nums = [2, 25, 9, 13, 7, 34]
+console.log(Math.max(nums)); // return Nan, doesnt work with array
+console.log(Math.max(...nums));
+
+function four(a, b, c, d) {
+    console.log('a', a);
+    console.log('b', b);
+    console.log('c', c);
+    console.log('d', d);
 }
 
-function multiply(x = 1, y) {
-    return x * y;
-}
-console.log(multiply(2)); // Nan (x=2, y=undifined) default parameter should be in the end
+const colors = ['green', 'orange', 'black', 'white']
+four(colors);
+four(...colors);
+const str = 'GOAT'
+four(str);
+four(...str);
 
-const greet = (person, greeting='Hi', punctuation) => (console.log(`${greeting}, ${person} ${punctuation}`));
-greet('?', 'Oleh'); // the order is important!
+const fruits = ['orange', 'apple', 'banana', 'mango', 'kiwi']
+const vegies = ['potatoe', 'tomeatoe', 'onion', 'garlic', 'cucumber']
+const drinks = ['water', 'milk', 'beer', 'coca', 'sprite']
+
+const food = [...vegies, ...fruits, 'salad'] // the order does matter
+const fruits2 = [...fruits]
+console.log(food);
+console.log(fruits2); // new array 
+const shoppingList = [...fruits, ...vegies, ...drinks]
+console.log(shoppingList.sort());
+
+console.log('abcdef'.split(''));
+console.log([...'abcdef']);
+
+const feline = {
+    legs: 4,
+    family: 'Felidae'
+};
+
+const canine = {
+    family: 'Caninae',
+    furry: true
+};
+
+const dog = {
+    ...canine,
+    isPet: true,
+    adorable: true
+}
+console.log(dog);
+
+const cat = {
+    ...feline,
+    isGrumpy: true,
+    peronality: 'unpredictable'
+}
+console.log(cat);
+
+const catDog = {
+    ...canine,
+    ...feline
+}
+console.log(catDog);
+
+const tripod = {
+    ...canine,
+    legs: 3 //rewrite legs property, the oreder does metter
+}
+console.log(tripod);
+
+const catDogClone = {
+    ...catDog
+}
+console.log(catDog === catDogClone);
+// [...catDog]; // non iterable, only with object
+console.log({...[4,5,6]});
+console.log({...'abcde'});
+
+const random = [...'hello', {...catDog}];
+console.log(random);
