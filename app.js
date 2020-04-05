@@ -1211,50 +1211,64 @@ const books = [
 // const { country, ...other } = runner;
 // console.log(other);
 
-const results = [
-  {
-    first: "Eliud",
-    last: "Kipchoge",
-    country: "Kenya",
-  },
-  {
-    first: "Feyisa",
-    last: "Lilesa",
-    country: "Ethiopia",
-  },
-  {
-    first: "Galen",
-    last: "Rupp",
-    country: "USA",
-  },
-];
+// const results = [
+//   {
+//     first: "Eliud",
+//     last: "Kipchoge",
+//     country: "Kenya",
+//   },
+//   {
+//     first: "Feyisa",
+//     last: "Lilesa",
+//     country: "Ethiopia",
+//   },
+//   {
+//     first: "Galen",
+//     last: "Rupp",
+//     country: "USA",
+//   },
+// ];
 
-const [, , bronze] = results;
-console.log(bronze);
-const [{ first: goldWinner }, , { country }] = results;
-console.log(country);
-console.log(goldWinner);
+// const [, , bronze] = results;
+// console.log(bronze);
+// const [{ first: goldWinner }, , { country }] = results;
+// console.log(country);
+// console.log(goldWinner);
 
-const runner = {
-  first: "Eliud",
-  last: "Kipchoge",
-  country: "Kenya",
-  title: "Mr.",
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Mr.",
+// };
+
+// function print(person) {
+//     const {first, last, title} = person;
+//     console.log(`${first}, ${last}, ${title}`);
+// }
+// print(runner);
+
+// function print2({first, last, country}) {
+//     console.log(first, last, country);
+// }
+// print2(runner);
+
+// const response = ['HTTP', '200 OK', 'application/json']
+// function parseResponse([protocol, statusCode, contentType]) {
+//     console.log(protocol, statusCode)
+// }
+// parseResponse(response);
+
+const sum = 10;
+const avg = 8;
+
+const obj1 = { 
+    sum: sum, 
+    avg: avg 
 };
-
-function print(person) {
-    const {first, last, title} = person;
-    console.log(`${first}, ${last}, ${title}`);
-}
-print(runner);
-
-function print2({first, last, country}) {
-    console.log(first, last, country);
-}
-print2(runner);
-
-const response = ['HTTP', '200 OK', 'application/json']
-function parseResponse([protocol, statusCode, contentType]) {
-    console.log(protocol, statusCode)
-}
-parseResponse(response);
+const obj2 = { 
+    sum, 
+    avg 
+};
+console.log(obj1);
+console.log(obj2);
