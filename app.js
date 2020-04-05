@@ -71,12 +71,11 @@
 
 // let num = 3;
 
-// if (num >= 1 && num <= 10) { 
+// if (num >= 1 && num <= 10) {
 //     console.log("Valid guess!");
 // } else {
 //     console.log("Invalid guess!");
 // }
-
 
 // let age = 30;
 
@@ -164,7 +163,7 @@
 // console.log(copy);
 // copy.splice(1,2); // delete 2 elements (return Array with deleted elements)
 // console.log(copy);
-// copy.splice(3, 1, 'salt', 'paper'); // replace eggs to salt and papper 
+// copy.splice(3, 1, 'salt', 'paper'); // replace eggs to salt and papper
 // console.log(copy);
 
 // let people = ['Anna', 'Nancy', 'Susan', 'Nick', 'Mick', 'Alex'];
@@ -291,12 +290,12 @@
 //     {
 //         'product': 'water',
 //         'price': 0.2,
-//         'quantity': 10 
+//         'quantity': 10
 //     },
 //     {
 //         'product': 'juice',
 //         'price': 3,
-//         'quantity': 2 
+//         'quantity': 2
 //     }
 // ];
 
@@ -311,7 +310,7 @@
 // const palette2 = palette
 // palette2.green = '#1re3da'
 
-// console.log(palette2); 
+// console.log(palette2);
 // console.log(palette); // both are changed, because use the same reference
 
 // let nums = [1, 2, 3];
@@ -511,7 +510,7 @@
 
 // for (let movie of Object.keys(movieReviews)) {
 //     console.log(movie, movieReviews[movie]);
-// }; 
+// };
 
 // const ratings = Object.values(movieReviews);
 // let avgRating = 0;
@@ -556,7 +555,7 @@
 //     console.log('All DONE!'); // never run!
 // }
 // // sum(9,4);
-// console.log(sum(9,8)); 
+// console.log(sum(9,8));
 
 // function devide(a, b) {
 //     console.log(a / b);
@@ -601,7 +600,7 @@
 // console.log(isValidPassword('testtest', 'dd'));
 
 // function isValidPassword2(password, username) {
-//     const longEnough = password.length >= 8; 
+//     const longEnough = password.length >= 8;
 //     const tooSimilar =  password.includes(username);
 //     const hasSpace =  password.includes(' ');
 //     return (longEnough && !tooSimilar && !hasSpace);
@@ -726,7 +725,7 @@
 
 // function pickOne(fun1, fun2) {
 //     const rand = Math.random();
-//     if (rand < 0.5) { 
+//     if (rand < 0.5) {
 //         fun1();
 //     }
 //     else {
@@ -812,37 +811,37 @@
 // })
 
 const books = [
-    {
-        title: 'Good Omens',
-        authors: ['Terry', 'Neil'],
-        rating: 3.25,
-        genre: ['fiction', 'fantasy']
-    },
-    {
-        title: 'Bone: The Complete Edition',
-        authors: ['Jeff Smith'],
-        rating: 4.42,
-        genre: ['novel', 'fantasy']
-    },
-    {
-        title: 'American Gods',
-        authors: ['Neil Gaiman'],
-        rating: 4.11,
-        genre: ['fiction', 'fantasy']
-    },
-    {
-        title: 'A Gentelman in Moscow',
-        authors: ['Amor Towles'],
-        rating: 4.36,
-        genre: ['fiction', 'historical fiction']
-    },
-    {
-        title: 'Changing My Mind',
-        authors: ['Zadie Smith'],
-        rating: 3.83,
-        genre: ['nonfiction', 'essays']
-    }
-]
+  {
+    title: "Good Omens",
+    authors: ["Terry", "Neil"],
+    rating: 3.25,
+    genre: ["fiction", "fantasy"],
+  },
+  {
+    title: "Bone: The Complete Edition",
+    authors: ["Jeff Smith"],
+    rating: 4.42,
+    genre: ["novel", "fantasy"],
+  },
+  {
+    title: "American Gods",
+    authors: ["Neil Gaiman"],
+    rating: 4.11,
+    genre: ["fiction", "fantasy"],
+  },
+  {
+    title: "A Gentelman in Moscow",
+    authors: ["Amor Towles"],
+    rating: 4.36,
+    genre: ["fiction", "historical fiction"],
+  },
+  {
+    title: "Changing My Mind",
+    authors: ["Zadie Smith"],
+    rating: 3.83,
+    genre: ["nonfiction", "essays"],
+  },
+];
 
 // books.forEach(function(book) {
 //     console.log(book.title.toUpperCase());
@@ -1099,7 +1098,7 @@ const books = [
 // const food = [...vegies, ...fruits, 'salad'] // the order does matter
 // const fruits2 = [...fruits]
 // console.log(food);
-// console.log(fruits2); // new array 
+// console.log(fruits2); // new array
 // const shoppingList = [...fruits, ...vegies, ...drinks]
 // console.log(shoppingList.sort());
 
@@ -1168,19 +1167,46 @@ const books = [
 // const multiply = () => (console.log(arguments)) // arguments doesn't work with arrow function
 // multiply(2,4);
 
-function sum(...nums) {
-    return nums.reduce((total, curVal) => total + curVal);
-}
-console.log(sum(2,4,6));
+// function sum(...nums) {
+//     return nums.reduce((total, curVal) => total + curVal);
+// }
+// console.log(sum(2,4,6));
 
-function fullName(first, last, ...titles) { // rest must be the last!
-    console.log('first', first);
-    console.log('last', last);
-    console.log('titles', titles);
-}
-fullName('Tom', 'Smith', 'Jr.', 'III');
+// function fullName(first, last, ...titles) { // rest must be the last!
+//     console.log('first', first);
+//     console.log('last', last);
+//     console.log('titles', titles);
+// }
+// fullName('Tom', 'Smith', 'Jr.', 'III');
 
-const multiply = (...nums) => (
-    nums.reduce((total, cur) => total * cur)
-);
-console.log(multiply(4,5,6));
+// const multiply = (...nums) => (
+//     nums.reduce((total, cur) => total * cur)
+// );
+// console.log(multiply(4,5,6));
+
+const animals = ["dog", "cat", "deer", "mouse", "rabbit", "bear"];
+// const dog = animals[0];
+// const cat = animals[1];
+// const deer = animals[2];
+const [dog, cat, deer] = animals; // order does matter!
+console.log(cat);
+const [dog1, , , , , bear1] = animals;
+console.log(dog1, bear1);
+const [dog2, ...others] = animals;
+console.log(dog2, others);
+
+const runner = {
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+  title: "Mr.",
+};
+
+const { last, first, time } = runner; // {} - for distructuring objects, order doesn't matter.
+console.log(first, last, time); // time underfined
+
+const { country: nation, title: title1 } = runner; // variable nation with value from country
+console.log(nation, title1);
+console.log(country); // error
+const { country, ...other } = runner;
+console.log(other);
