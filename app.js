@@ -1316,3 +1316,14 @@ const math = {
 }
 console.log(math);
 console.log(math.add(5,2));
+
+const auth = {
+    username: 'Tommy',
+    login() {
+        console.log('LOOGED IN!')
+    },
+    logout() {
+        console.log('GOODBYE!')
+    }
+}
+console.log(auth);
