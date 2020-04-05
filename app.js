@@ -1273,34 +1273,46 @@ const books = [
 // console.log(obj1);
 // console.log(obj2);
 
-const role = 'host';
-const person = 'Jools Holland';
-const role2 = 'Director';
-const person2 = 'James Cameron';
+// const role = 'host';
+// const person = 'Jools Holland';
+// const role2 = 'Director';
+// const person2 = 'James Cameron';
 
-const team = {
-    role: person
+// const team = {
+//     role: person
+// }
+// console.log(team);
+
+// const team2 = {};
+// team2[role] = person;
+// team2[role2] = person2;
+// console.log(team2);
+
+// const team3 = {
+//     [role]: person,
+//     [role2]: person2,
+//     [1+2+3]: 'six'
+// }
+// console.log(team3);
+
+// function addProperty(obj, k, v) {
+//     const  newObj = {...obj};
+//     newObj[k] = v;
+//     return newObj;
+// }
+// console.log(addProperty(team3, 4, 'four'));
+
+// const addProperty2 = (obj, k, v) => ({...obj, [k]:v });
+// console.log(addProperty(team3, 'happy', true));
+
+const math = {
+    numbers: [1,2,3,4,5],
+    add: function(x,y) {
+        return x+y;
+    },
+    multiply: function(x,y) {
+        return x*y;
+    }
 }
-console.log(team);
-
-const team2 = {};
-team2[role] = person;
-team2[role2] = person2;
-console.log(team2);
-
-const team3 = {
-    [role]: person,
-    [role2]: person2,
-    [1+2+3]: 'six'
-}
-console.log(team3);
-
-function addProperty(obj, k, v) {
-    const  newObj = {...obj};
-    newObj[k] = v;
-    return newObj;
-}
-console.log(addProperty(team3, 4, 'four'));
-
-const addProperty2 = (obj, k, v) => ({...obj, [k]:v });
-console.log(addProperty(team3, 'happy', true)); 
+console.log(math);
+console.log(math.add(5,2));
