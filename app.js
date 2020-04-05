@@ -1184,16 +1184,56 @@ const books = [
 // );
 // console.log(multiply(4,5,6));
 
-const animals = ["dog", "cat", "deer", "mouse", "rabbit", "bear"];
-// const dog = animals[0];
-// const cat = animals[1];
-// const deer = animals[2];
-const [dog, cat, deer] = animals; // order does matter!
-console.log(cat);
-const [dog1, , , , , bear1] = animals;
-console.log(dog1, bear1);
-const [dog2, ...others] = animals;
-console.log(dog2, others);
+// const animals = ["dog", "cat", "deer", "mouse", "rabbit", "bear"];
+// // const dog = animals[0];
+// // const cat = animals[1];
+// // const deer = animals[2];
+// const [dog, cat, deer] = animals; // order does matter!
+// console.log(cat);
+// const [dog1, , , , , bear1] = animals;
+// console.log(dog1, bear1);
+// const [dog2, ...others] = animals;
+// console.log(dog2, others);
+
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Mr.",
+// };
+
+// const { last, first, time } = runner; // {} - for distructuring objects, order doesn't matter.
+// console.log(first, last, time); // time underfined
+
+// const { country: nation, title: title1 } = runner; // variable nation with value from country
+// console.log(nation, title1);
+// console.log(country); // error
+// const { country, ...other } = runner;
+// console.log(other);
+
+const results = [
+  {
+    first: "Eliud",
+    last: "Kipchoge",
+    country: "Kenya",
+  },
+  {
+    first: "Feyisa",
+    last: "Lilesa",
+    country: "Ethiopia",
+  },
+  {
+    first: "Galen",
+    last: "Rupp",
+    country: "USA",
+  },
+];
+
+const [, , bronze] = results;
+console.log(bronze);
+const [{ first: goldWinner }, , { country }] = results;
+console.log(country);
+console.log(goldWinner);
 
 const runner = {
   first: "Eliud",
@@ -1202,11 +1242,19 @@ const runner = {
   title: "Mr.",
 };
 
-const { last, first, time } = runner; // {} - for distructuring objects, order doesn't matter.
-console.log(first, last, time); // time underfined
+function print(person) {
+    const {first, last, title} = person;
+    console.log(`${first}, ${last}, ${title}`);
+}
+print(runner);
 
-const { country: nation, title: title1 } = runner; // variable nation with value from country
-console.log(nation, title1);
-console.log(country); // error
-const { country, ...other } = runner;
-console.log(other);
+function print2({first, last, country}) {
+    console.log(first, last, country);
+}
+print2(runner);
+
+const response = ['HTTP', '200 OK', 'application/json']
+function parseResponse([protocol, statusCode, contentType]) {
+    console.log(protocol, statusCode)
+}
+parseResponse(response);
