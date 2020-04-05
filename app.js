@@ -1072,83 +1072,98 @@ const books = [
 // const greet = (person, greeting='Hi', punctuation) => (console.log(`${greeting}, ${person} ${punctuation}`));
 // greet('?', 'Oleh'); // the order is important!
 
-console.log(Math.max(2, 25, 9, 13, 7, 34));
-console.log(Math.min(2, 25, 9, 13, 7, 34));
-const nums = [2, 25, 9, 13, 7, 34]
-console.log(Math.max(nums)); // return Nan, doesnt work with array
-console.log(Math.max(...nums));
+// console.log(Math.max(2, 25, 9, 13, 7, 34));
+// console.log(Math.min(2, 25, 9, 13, 7, 34));
+// const nums = [2, 25, 9, 13, 7, 34]
+// console.log(Math.max(nums)); // return Nan, doesnt work with array
+// console.log(Math.max(...nums));
 
-function four(a, b, c, d) {
-    console.log('a', a);
-    console.log('b', b);
-    console.log('c', c);
-    console.log('d', d);
+// function four(a, b, c, d) {
+//     console.log('a', a);
+//     console.log('b', b);
+//     console.log('c', c);
+//     console.log('d', d);
+// }
+
+// const colors = ['green', 'orange', 'black', 'white']
+// four(colors);
+// four(...colors);
+// const str = 'GOAT'
+// four(str);
+// four(...str);
+
+// const fruits = ['orange', 'apple', 'banana', 'mango', 'kiwi']
+// const vegies = ['potatoe', 'tomeatoe', 'onion', 'garlic', 'cucumber']
+// const drinks = ['water', 'milk', 'beer', 'coca', 'sprite']
+
+// const food = [...vegies, ...fruits, 'salad'] // the order does matter
+// const fruits2 = [...fruits]
+// console.log(food);
+// console.log(fruits2); // new array 
+// const shoppingList = [...fruits, ...vegies, ...drinks]
+// console.log(shoppingList.sort());
+
+// console.log('abcdef'.split(''));
+// console.log([...'abcdef']);
+
+// const feline = {
+//     legs: 4,
+//     family: 'Felidae'
+// };
+
+// const canine = {
+//     family: 'Caninae',
+//     furry: true
+// };
+
+// const dog = {
+//     ...canine,
+//     isPet: true,
+//     adorable: true
+// }
+// console.log(dog);
+
+// const cat = {
+//     ...feline,
+//     isGrumpy: true,
+//     peronality: 'unpredictable'
+// }
+// console.log(cat);
+
+// const catDog = {
+//     ...canine,
+//     ...feline
+// }
+// console.log(catDog);
+
+// const tripod = {
+//     ...canine,
+//     legs: 3 //rewrite legs property, the oreder does metter
+// }
+// console.log(tripod);
+
+// const catDogClone = {
+//     ...catDog
+// }
+// console.log(catDog === catDogClone);
+// // [...catDog]; // non iterable, only with object
+// console.log({...[4,5,6]});
+// console.log({...'abcde'});
+
+// const random = [...'hello', {...catDog}];
+// console.log(random);
+
+function sum() {
+    const argsArr = [...arguments];
+    return argsArr.reduce((a, b) => a + b);
 }
+console.log(sum(2,3,5,7,8));
 
-const colors = ['green', 'orange', 'black', 'white']
-four(colors);
-four(...colors);
-const str = 'GOAT'
-four(str);
-four(...str);
-
-const fruits = ['orange', 'apple', 'banana', 'mango', 'kiwi']
-const vegies = ['potatoe', 'tomeatoe', 'onion', 'garlic', 'cucumber']
-const drinks = ['water', 'milk', 'beer', 'coca', 'sprite']
-
-const food = [...vegies, ...fruits, 'salad'] // the order does matter
-const fruits2 = [...fruits]
-console.log(food);
-console.log(fruits2); // new array 
-const shoppingList = [...fruits, ...vegies, ...drinks]
-console.log(shoppingList.sort());
-
-console.log('abcdef'.split(''));
-console.log([...'abcdef']);
-
-const feline = {
-    legs: 4,
-    family: 'Felidae'
-};
-
-const canine = {
-    family: 'Caninae',
-    furry: true
-};
-
-const dog = {
-    ...canine,
-    isPet: true,
-    adorable: true
+function fullName(first, last) {
+    console.log(arguments);
+    console.log(first);
 }
-console.log(dog);
+fullName('Tom', 'Smith', 'Jr.', 'III');
 
-const cat = {
-    ...feline,
-    isGrumpy: true,
-    peronality: 'unpredictable'
-}
-console.log(cat);
-
-const catDog = {
-    ...canine,
-    ...feline
-}
-console.log(catDog);
-
-const tripod = {
-    ...canine,
-    legs: 3 //rewrite legs property, the oreder does metter
-}
-console.log(tripod);
-
-const catDogClone = {
-    ...catDog
-}
-console.log(catDog === catDogClone);
-// [...catDog]; // non iterable, only with object
-console.log({...[4,5,6]});
-console.log({...'abcde'});
-
-const random = [...'hello', {...catDog}];
-console.log(random);
+const multiply = () => (console.log(arguments)) // arguments doesn't work with arrow function
+multiply(2,4);
