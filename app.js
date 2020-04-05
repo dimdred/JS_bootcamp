@@ -1305,25 +1305,63 @@ const books = [
 // const addProperty2 = (obj, k, v) => ({...obj, [k]:v });
 // console.log(addProperty(team3, 'happy', true));
 
-const math = {
-    numbers: [1,2,3,4,5],
-    add: function(x,y) {
-        return x+y;
-    },
-    multiply: function(x,y) {
-        return x*y;
-    }
-}
-console.log(math);
-console.log(math.add(5,2));
+// const math = {
+//     numbers: [1,2,3,4,5],
+//     add: function(x,y) {
+//         return x+y;
+//     },
+//     multiply: function(x,y) {
+//         return x*y;
+//     }
+// }
+// console.log(math);
+// console.log(math.add(5,2));
 
-const auth = {
-    username: 'Tommy',
-    login() {
-        console.log('LOOGED IN!')
+// const auth = {
+//     username: 'Tommy',
+//     login() {
+//         console.log('LOOGED IN!')
+//     },
+//     logout() {
+//         console.log('GOODBYE!')
+//     }
+// }
+// console.log(auth);
+
+function sayHi() {
+    console.log('Hi!');
+    console.log(this);
+}
+// sayHi();
+
+const greet = function() {
+    console.log(this);
+}
+// greet();
+
+const person = {
+    first: 'Cherilyn',
+    last: 'Sarkisian',
+    nickName: 'Cher',
+    fullName() {
+        const {first, last, nickName} = this;
+        return `${first} ${last} AKA ${nickName}`;
     },
-    logout() {
-        console.log('GOODBYE!')
+    printBio() {
+        console.log(this); // set to person object
+        const fullName = this.fullName();
+        console.log(`${fullName} is a nice person!`);
+    },
+    laugh: () => {
+        console.log(this); // // set to window object
+        console.log(`${this.nickName} says HAHAHA!`)
     }
 }
-console.log(auth);
+
+console.log(person.fullName());
+person.printBio();
+
+const printBio2 = person.printBio;
+person.printBio(); // works!
+// printBio2(); // error!
+person.laugh();
