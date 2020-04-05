@@ -1153,17 +1153,34 @@ const books = [
 // const random = [...'hello', {...catDog}];
 // console.log(random);
 
-function sum() {
-    const argsArr = [...arguments];
-    return argsArr.reduce((a, b) => a + b);
-}
-console.log(sum(2,3,5,7,8));
+// function sum() {
+//     const argsArr = [...arguments];
+//     return argsArr.reduce((a, b) => a + b);
+// }
+// console.log(sum(2,3,5,7,8));
 
-function fullName(first, last) {
-    console.log(arguments);
-    console.log(first);
+// function fullName(first, last) {
+//     console.log(arguments);
+//     console.log(first);
+// }
+// fullName('Tom', 'Smith', 'Jr.', 'III');
+
+// const multiply = () => (console.log(arguments)) // arguments doesn't work with arrow function
+// multiply(2,4);
+
+function sum(...nums) {
+    return nums.reduce((total, curVal) => total + curVal);
+}
+console.log(sum(2,4,6));
+
+function fullName(first, last, ...titles) { // rest must be the last!
+    console.log('first', first);
+    console.log('last', last);
+    console.log('titles', titles);
 }
 fullName('Tom', 'Smith', 'Jr.', 'III');
 
-const multiply = () => (console.log(arguments)) // arguments doesn't work with arrow function
-multiply(2,4);
+const multiply = (...nums) => (
+    nums.reduce((total, cur) => total * cur)
+);
+console.log(multiply(4,5,6));
