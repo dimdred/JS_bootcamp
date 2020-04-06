@@ -1262,13 +1262,13 @@ const books = [
 // const sum = 10;
 // const avg = 8;
 
-// const obj1 = { 
-//     sum: sum, 
-//     avg: avg 
+// const obj1 = {
+//     sum: sum,
+//     avg: avg
 // };
-// const obj2 = { 
-//     sum, 
-//     avg 
+// const obj2 = {
+//     sum,
+//     avg
 // };
 // console.log(obj1);
 // console.log(obj2);
@@ -1366,19 +1366,83 @@ const books = [
 // // printBio2(); // error!
 // person.laugh();
 
-const annoyer  = {
-    phrases: ['Yo!', 'literally', 'cray cray', 'YOLO', 'Totes'],
-    pickPhrases() {
-        const idx = Math.floor(Math.random() * this.phrases.length);
-        return this.phrases[idx];
-    },
-    start() {
-        this.timerId = setInterval(() => { // use arrow function to get this from start
-            // console.log(this); // set to global variable window with function()
-            console.log(this.pickPhrases());
-        }, 3000)
-    },
-    stop() {
-        clearInterval(this.timerId);
+// const annoyer  = {
+//     phrases: ['Yo!', 'literally', 'cray cray', 'YOLO', 'Totes'],
+//     pickPhrases() {
+//         const idx = Math.floor(Math.random() * this.phrases.length);
+//         return this.phrases[idx];
+//     },
+//     start() {
+//         this.timerId = setInterval(() => { // use arrow function to get this from start
+//             // console.log(this); // set to global variable window with function()
+//             console.log(this.pickPhrases());
+//         }, 3000)
+//     },
+//     stop() {
+//         clearInterval(this.timerId);
+//     }
+// }
+
+function makeDake() {
+  const deck = [];
+  const suitList = ["clubs", "spades", "hearts", "diamonds"];
+  const valueList = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+  for (const suit of suitList) {
+    for (const value of valueList) {
+      deck.push({
+        value,
+        suit,
+      });
     }
+  }
+  return deck;
 }
+
+function drawCard(deck) {
+  return deck.pop();
+}
+
+// const myDeck = makeDake();
+// const card1 = drawCard(myDeck);
+
+const myDeck = {
+  deck: [],
+  drawnCards: [],
+  suitList: ["clubs", "spades", "hearts", "diamonds"],
+  valueList: [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"],
+  initializeDeck() {
+    const { deck, suitList, valueList } = this;
+    for (const suit of suitList) {
+      for (const value of valueList) {
+        deck.push({
+          value,
+          suit,
+        });
+      }
+    }
+    return deck;
+  },
+  drawCard() {
+    const card = this.deck.pop();
+    this.drawnCards.push(card);
+    return card;
+  },
+  drawMultiple(num) {
+    const cards = [];
+    for (let i = 0; i < num; i++) {
+      const card = this.drawCard();
+      cards.push(card);
+    }
+    return cards;
+  },
+  shuffle() {
+    const {deck} = this;
+    // loop over array backwards
+    for (let i = deck.length - 1; i > 0; i--) {
+      // pick random element before current element
+      let j = Math.floor(Math.random() * i + 1);
+      // swap elements
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+  }
+};
