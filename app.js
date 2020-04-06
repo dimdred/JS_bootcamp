@@ -1328,40 +1328,57 @@ const books = [
 // }
 // console.log(auth);
 
-function sayHi() {
-    console.log('Hi!');
-    console.log(this);
-}
-// sayHi();
+// function sayHi() {
+//     console.log('Hi!');
+//     console.log(this);
+// }
+// // sayHi();
 
-const greet = function() {
-    console.log(this);
-}
-// greet();
+// const greet = function() {
+//     console.log(this);
+// }
+// // greet();
 
-const person = {
-    first: 'Cherilyn',
-    last: 'Sarkisian',
-    nickName: 'Cher',
-    fullName() {
-        const {first, last, nickName} = this;
-        return `${first} ${last} AKA ${nickName}`;
+// const person = {
+//     first: 'Cherilyn',
+//     last: 'Sarkisian',
+//     nickName: 'Cher',
+//     fullName() {
+//         const {first, last, nickName} = this;
+//         return `${first} ${last} AKA ${nickName}`;
+//     },
+//     printBio() {
+//         console.log(this); // set to person object
+//         const fullName = this.fullName();
+//         console.log(`${fullName} is a nice person!`);
+//     },
+//     laugh: () => {
+//         console.log(this); // // set to window object
+//         console.log(`${this.nickName} says HAHAHA!`)
+//     }
+// }
+
+// console.log(person.fullName());
+// person.printBio();
+
+// const printBio2 = person.printBio;
+// person.printBio(); // works!
+// // printBio2(); // error!
+// person.laugh();
+
+const annoyer  = {
+    phrases: ['Yo!', 'literally', 'cray cray', 'YOLO', 'Totes'],
+    pickPhrases() {
+        const idx = Math.floor(Math.random() * this.phrases.length);
+        return this.phrases[idx];
     },
-    printBio() {
-        console.log(this); // set to person object
-        const fullName = this.fullName();
-        console.log(`${fullName} is a nice person!`);
+    start() {
+        this.timerId = setInterval(() => { // use arrow function to get this from start
+            // console.log(this); // set to global variable window with function()
+            console.log(this.pickPhrases());
+        }, 3000)
     },
-    laugh: () => {
-        console.log(this); // // set to window object
-        console.log(`${this.nickName} says HAHAHA!`)
+    stop() {
+        clearInterval(this.timerId);
     }
 }
-
-console.log(person.fullName());
-person.printBio();
-
-const printBio2 = person.printBio;
-person.printBio(); // works!
-// printBio2(); // error!
-person.laugh();
