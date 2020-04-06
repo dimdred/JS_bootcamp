@@ -1383,66 +1383,129 @@ const books = [
 //     }
 // }
 
-function makeDake() {
-  const deck = [];
-  const suitList = ["clubs", "spades", "hearts", "diamonds"];
-  const valueList = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
-  for (const suit of suitList) {
-    for (const value of valueList) {
-      deck.push({
-        value,
-        suit,
-      });
-    }
-  }
-  return deck;
-}
+// function makeDake() {
+//   const deck = [];
+//   const suitList = ["clubs", "spades", "hearts", "diamonds"];
+//   const valueList = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+//   for (const suit of suitList) {
+//     for (const value of valueList) {
+//       deck.push({
+//         value,
+//         suit,
+//       });
+//     }
+//   }
+//   return deck;
+// }
 
-function drawCard(deck) {
-  return deck.pop();
-}
+// function drawCard(deck) {
+//   return deck.pop();
+// }
 
-// const myDeck = makeDake();
-// const card1 = drawCard(myDeck);
+// // const myDeck = makeDake();
+// // const card1 = drawCard(myDeck);
 
-const myDeck = {
-  deck: [],
-  drawnCards: [],
-  suitList: ["clubs", "spades", "hearts", "diamonds"],
-  valueList: [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"],
-  initializeDeck() {
-    const { deck, suitList, valueList } = this;
-    for (const suit of suitList) {
-      for (const value of valueList) {
-        deck.push({
-          value,
-          suit,
-        });
+// const myDeck = {
+//   deck: [],
+//   drawnCards: [],
+//   suitList: ["clubs", "spades", "hearts", "diamonds"],
+//   valueList: [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"],
+//   initializeDeck() {
+//     const { deck, suitList, valueList } = this;
+//     for (const suit of suitList) {
+//       for (const value of valueList) {
+//         deck.push({
+//           value,
+//           suit,
+//         });
+//       }
+//     }
+//     return deck;
+//   },
+//   drawCard() {
+//     const card = this.deck.pop();
+//     this.drawnCards.push(card);
+//     return card;
+//   },
+//   drawMultiple(num) {
+//     const cards = [];
+//     for (let i = 0; i < num; i++) {
+//       const card = this.drawCard();
+//       cards.push(card);
+//     }
+//     return cards;
+//   },
+//   shuffle() {
+//     const {deck} = this;
+//     // loop over array backwards
+//     for (let i = deck.length - 1; i > 0; i--) {
+//       // pick random element before current element
+//       let j = Math.floor(Math.random() * i + 1);
+//       // swap elements
+//       [deck[i], deck[j]] = [deck[j], deck[i]];
+//     }
+//   }
+// };
+
+// myDeck.initializeDeck();
+// myDeck.shuffle();
+// const h1 = myDeck.drawMultiple(2);
+// const h2 = myDeck.drawMultiple(2);
+// const h3 = myDeck.drawMultiple(5);
+// console.log(myDeck.deck);
+// console.log(myDeck.drawnCards);
+
+//made the function that returns object
+const makeDeck = () => {
+    return {
+        deck: [],
+        drawnCards: [],
+        suitList: ["clubs", "spades", "hearts", "diamonds"],
+        valueList: [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"],
+        initializeDeck() {
+          const { deck, suitList, valueList } = this;
+          for (const suit of suitList) {
+            for (const value of valueList) {
+              deck.push({
+                value,
+                suit,
+              });
+            }
+          }
+          return deck;
+        },
+        drawCard() {
+          const card = this.deck.pop();
+          this.drawnCards.push(card);
+          return card;
+        },
+        drawMultiple(num) {
+          const cards = [];
+          for (let i = 0; i < num; i++) {
+            const card = this.drawCard();
+            cards.push(card);
+          }
+          return cards;
+        },
+        shuffle() {
+          const {deck} = this;
+          // loop over array backwards
+          for (let i = deck.length - 1; i > 0; i--) {
+            // pick random element before current element
+            let j = Math.floor(Math.random() * i + 1);
+            // swap elements
+            [deck[i], deck[j]] = [deck[j], deck[i]];
+          }
+        }
       }
-    }
-    return deck;
-  },
-  drawCard() {
-    const card = this.deck.pop();
-    this.drawnCards.push(card);
-    return card;
-  },
-  drawMultiple(num) {
-    const cards = [];
-    for (let i = 0; i < num; i++) {
-      const card = this.drawCard();
-      cards.push(card);
-    }
-    return cards;
-  },
-  shuffle() {
-    const {deck} = this;
-    // loop over array backwards
-    for (let i = deck.length - 1; i > 0; i--) {
-      // pick random element before current element
-      let j = Math.floor(Math.random() * i + 1);
-      // swap elements
-      [deck[i], deck[j]] = [deck[j], deck[i]];
-    }
-  }
-};
+}
+
+const myDeck = makeDeck();
+myDeck.initializeDeck();
+myDeck.shuffle();
+const h1 = myDeck.drawMultiple(2);
+const h2 = myDeck.drawMultiple(2);
+const h3 = myDeck.drawMultiple(5);
+
+const myDeck2 = makeDeck();
+myDeck2.initializeDeck();
