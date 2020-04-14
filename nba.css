@@ -1,11 +1,24 @@
-.win{
+.win {
     background-color: green;
 }
-.loss{
+.loss {
     background-color: red;
 }
-.btn{
+.btn {
     position: absolute;
     top: 10px;
     left: 10px;
+    visibility: hidden;
+}
+#boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    width: 200px;
+    height: 200px;
+}
+h1 {
+    text-align: center;
 }
