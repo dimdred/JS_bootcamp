@@ -4,3 +4,8 @@
 .loss{
     background-color: red;
 }
+.btn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
