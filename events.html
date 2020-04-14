@@ -10,12 +10,20 @@
 </head>
 
 <body>
-    <button onclick="alert('You clicked me!')">Click Me!</button>
-    <button onmouseover="alert('You mouseovered me!')">Click Me!</button>
-    <button id="clicker">Clicker</button>
-    <form action="">
-        <input onclick="console.log('Clicked the Input')" type="range" min="10" max="50">
-    </form>
+    <section>
+        <h2>2 Ways NOT to Add Events</h2>
+        <br> <button onclick="alert('You clicked me!')">Click Me!</button> </br>
+        <br><button onmouseover="alert('You mouseovered me!')">Click Me!</button> </br>
+        <br><button id="clicker">Clicker</button> </br>
+        <form action="">
+            <input onclick="console.log('Clicked the Input')" type="range" min="10" max="50">
+        </form>
+    </section>
+    <section>
+        <h2>addEventListener</h2>
+        <button id="newBtn">New Button!</button>
+    </section>
+
     <script src="events.js"></script>
 </body>
 
