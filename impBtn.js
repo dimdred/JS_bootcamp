@@ -27,6 +27,33 @@ for(let color of colors) {
     boxes.appendChild(box);
     box.addEventListener('click', changeColor);
 }
-const keyPressed = document.body.addEventListener('keypress', function(e){
-    console.log(e);
-});
+// const keyPressed = document.body.addEventListener('keypress', function(e){
+//     console.log(e);
+// });
+
+const input = document.querySelector('#username');
+input.addEventListener('keydown', function(k) {
+    console.log(k);
+})
+
+input.addEventListener('keyup', function(k) {
+    console.log(k);
+})
+
+input.addEventListener('keypress', function(k) {
+    console.log(k);
+})
+
+const addItemInput = document.querySelector('#addItem');
+const ul = document.querySelector('#items');
+
+addItemInput.addEventListener('keypress', function(ev) {
+    if(ev.key === 'Enter') {
+        if(!this.value) return;
+        const inputTxt = this.value; // also work addItemInput.value
+        const newItem = document.createElement('li');
+        newItem.innerText = inputTxt;
+        ul.appendChild(newItem);
+        addItemInput.value = '';
+    }   
+})
