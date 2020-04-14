@@ -15,9 +15,9 @@ impBtn.addEventListener('click', () => {
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'indigo', 'violet'];
 // arrow function doesn't work (this doesn't work properly)
 const h1 = document.querySelector('h1');
-const changeColor = function() {
+const changeColor = function(evt) {
     h1.style.color = this.style.backgroundColor;
-    console.log(this.style.backgroundColor);
+    console.log(evt);
 }
 const boxes = document.querySelector('#boxes');
 for(let color of colors) {
@@ -27,3 +27,6 @@ for(let color of colors) {
     boxes.appendChild(box);
     box.addEventListener('click', changeColor);
 }
+const keyPressed = document.body.addEventListener('keypress', function(e){
+    console.log(e);
+});
