@@ -22,13 +22,13 @@ const makeDogPromise = () => {
   });
 };
 
-makeDogPromise()
-  .then(() => {
-    console.log("YAY WE GOT A DOG!");
-  })
-  .catch(() => {
-    console.log(":( NO DOG!");
-  });
+// makeDogPromise()
+//   .then(() => {
+//     console.log("YAY WE GOT A DOG!");
+//   })
+//   .catch(() => {
+//     console.log(":( NO DOG!");
+//   });
 
 const fakeRequest = (url) => {
   return new Promise((resolve, reject) => {
@@ -39,6 +39,23 @@ const fakeRequest = (url) => {
           { id: 1, username: "DD" },
           { id: 2, username: "JJ" },
         ],
+        "/users/1": {
+          id: 1,
+          username: "DD",
+          upvotes: 360,
+          city: "Lisbon",
+          topPostId: 454321,
+        },
+        "/users/2": {
+          id: 2,
+          username: "JJ",
+          upvotes: 571,
+          city: "Madrid",
+        },
+        "/posts/454321": {
+          id: 454321,
+          title: "COVID-19",
+        },
         "/about": "This is about page!",
       };
       const data = pages[url];
@@ -52,13 +69,34 @@ const fakeRequest = (url) => {
   });
 };
 
+// fakeRequest("/users")
+//   .then((res) => {
+//     const id = res.data[0].id;
+//     fakeRequest(`/users/${id}`).then((res) => {
+//         const post = res.data.topPostId;
+//         fakeRequest(`/posts/${post}`).then((res) => {
+//             console.log(res);
+//         })
+//     })
+//   })
+//   .catch((err) => {
+//     console.log("REQUEST FAILED!", err); // doesnt catch nested fakeRequest, only first one
+//   });
+
 fakeRequest("/users")
   .then((res) => {
-    console.log("Status code: ", res.status);
-    console.log("Data: ", res.data);
-    console.log("REQUEST WORKED!");
+    const id = res.data[0].id;
+    console.log(res);
+    return fakeRequest(`/users/${id}`);
   })
-  .catch((res) => {
-    console.log(res.status);
-    console.log("REQUEST FAILED!");
+  .then((res) => {
+    const post = res.data.topPostId;
+    console.log(res);
+    return fakeRequest(`/postss/${post}`);
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log("REQUEST FAILED!", err); // works if each fakeRequest failed
   });
