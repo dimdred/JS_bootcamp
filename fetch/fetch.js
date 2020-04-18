@@ -22,25 +22,32 @@
 // firstRequest.send();
 // console.log('Request Sent!');
 
+const checkStatusAndParse = (response) => {
+  if (!response.ok) throw new Error(`Status Code Error: ${response.status}`);
+  return response.json();
+};
+const printURL = (data) => {
+  if (Array.isArray(data)) {
+    for (const character of data) {
+      console.log(character.url);
+    }
+    return Promise.resolve(data[0].books); 
+  } else {
+    console.log(data.url);
+    return Promise.resolve(data.url); 
+  }
+};
+const fetchBook = (bookUrl) => {
+  return fetch(bookUrl);
+};
+
 const arrCultures = [];
 fetch("https://anapioficeandfire.com/api/characters/")
-  .then((response) => {
-    if (!response.ok) throw new Error(`Status Code Error: ${response.status}`);
-    return response.json();
-  })
-  .then((data) => {
-    data.map((character) => {
-      if (character.culture.length > 0) arrCultures.push(character.culture);
-    });
-    const bookUrl = data[0].books;
-    return fetch(bookUrl);
-  })
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-      console.log(data);
-  })
+  .then(checkStatusAndParse)
+  .then(printURL)
+  .then(fetchBook)
+  .then(checkStatusAndParse)
+  .then(printURL)
   .catch((err) => {
     console.log("FETCH ERROR", err);
   });
