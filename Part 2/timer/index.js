@@ -18,8 +18,23 @@ class Timer {
     }
 
     tick = () => {
-        const timeRemaining = parseFloat(this.durationInput.value);
-        this.durationInput.value = timeRemaining - 1;
+        // const timeRemaining = this.timeRemaining;
+        // this.timeRemaining = timeRemaining - 1;
+        this.timeRemaining = this.timeRemaining - 1;
+    }
+
+    // getTime = () => {
+    //     return parseFloat(this.durationInput.value);
+    // }
+    get timeRemaining() {
+        return parseFloat(this.durationInput.value);
+    }
+
+    // setTime = (time) => {
+    //     this.durationInput.value = time;
+    // }
+    set timeRemaining(time) {
+        this.durationInput.value = time;
     }
 }
 
