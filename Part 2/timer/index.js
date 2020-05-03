@@ -9,20 +9,17 @@ class Timer {
     }
 
     start = () => {
-        this.click(); // run immediately by click;
-        this.interval = setInterval(this.click, 1000);
+        this.tick(); // run immediately by click;
+        this.interval = setInterval(this.tick, 1000);
     }
 
     pause = () => {
         clearInterval(this.interval);
     }
 
-    click = () => {
-        console.log('click');
-    }
-
-    important() {
-        console.log('IMPORTANT!');
+    tick = () => {
+        const timeRemaining = parseFloat(this.durationInput.value);
+        this.durationInput.value = timeRemaining - 1;
     }
 }
 
