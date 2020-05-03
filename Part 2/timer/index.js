@@ -1,48 +1,66 @@
 class Timer {
-    constructor(durationInput, startBtn, pauseBtn) {
-        this.durationInput = durationInput;
-        this.startBtn = startBtn;
-        this.pauseBtn = pauseBtn;
-
-        this.startBtn.addEventListener('click', this.start); //this.start.bind(this)
-        this.pauseBtn.addEventListener('click', this.pause);
+  constructor(durationInput, startBtn, pauseBtn, callbacks) {
+    this.durationInput = durationInput;
+    this.startBtn = startBtn;
+    this.pauseBtn = pauseBtn;
+    if (callbacks) {
+      this.onStart = callbacks.onStart;
+      this.onTick = callbacks.onTick;
+      this.onComplete = callbacks.onComplete;
     }
 
-    start = () => {
-        this.tick(); // run immediately by click;
-        this.interval = setInterval(this.tick, 1000);
-    }
+    this.startBtn.addEventListener("click", this.start); //this.start.bind(this)
+    this.pauseBtn.addEventListener("click", this.pause);
+  }
 
-    pause = () => {
-        clearInterval(this.interval);
+  start = () => {
+    if (this.onStart) {
+      this.onStart();
     }
+    this.tick(); // run immediately by click;
+    this.interval = setInterval(this.tick, 1000);
+  };
 
-    tick = () => {
-        if(this.timeRemaining <= 0) {
-            this.pause();
-        }
-        else {
-            this.timeRemaining = this.timeRemaining - 1;
-        }
-    }
+  pause = () => {
 
-    // getTime = () => {
-    //     return parseFloat(this.durationInput.value);
-    // }
-    get timeRemaining() {
-        return parseFloat(this.durationInput.value);
-    }
+    clearInterval(this.interval);
+  };
 
-    // setTime = (time) => {
-    //     this.durationInput.value = time;
-    // }
-    set timeRemaining(time) {
-        this.durationInput.value = time;
+  tick = () => {
+    if (this.timeRemaining <= 0) {
+      this.pause();
+      if (this.onComplete) {
+        this.onComplete();
+      }
+    } else {
+      this.timeRemaining = this.timeRemaining - 1;
+      if (this.onTick) {
+        this.onTick();
+      }
     }
+  };
+
+  get timeRemaining() {
+    return parseFloat(this.durationInput.value);
+  }
+
+  set timeRemaining(time) {
+    this.durationInput.value = time;
+  }
 }
 
-const durationInput = document.querySelector('#duration');
-const startBtn = document.querySelector('#start');
-const pauseBtn = document.querySelector('#pause');
+const durationInput = document.querySelector("#duration");
+const startBtn = document.querySelector("#start");
+const pauseBtn = document.querySelector("#pause");
 
-const timer = new Timer(durationInput, startBtn, pauseBtn);
+const timer = new Timer(durationInput, startBtn, pauseBtn, {
+  onStart() {
+    console.log("Timer started!");
+  },
+  onTick() {
+    console.log("Timer just ticked down!");
+  },
+  onComplete() {
+    console.log("Timer is completed!");
+  },
+});
